@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Site Police d’écriture - Projet</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <canvas id="particles"></canvas>
+  <canvas id="trail"></canvas>
+
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="projets.html" class="active">Projets</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="hero small">
+    <h1 class="page-title">Site Police d’écriture</h1>
+    <p>Projet Développement</p>
+  </section>
+
+  <section class="project-split">
+    <div class="project-left">
+      <h1 class="project-title">Site Police d’écriture</h1>
+      <p class="project-subtitle">Projet Développement</p>
+
+      <div class="project-block">
+        <h3>Présentation</h3>
+        <p>
+          Le projet <strong>Site Police d’écriture</strong> est une plateforme éducative permettant de découvrir l’évolution des polices à travers l’histoire.
+          Elle met en avant les contextes culturels et artistiques ayant influencé leur création, avec une interface claire et interactive.
+        </p>
+      </div>
+
+      <div class="project-block">
+        <h3>Objectifs</h3>
+        <ul>
+          <li>Apprendre aux utilisateurs l’histoire des polices d’écriture.</li>
+          <li>Proposer une interface simple et intuitive.</li>
+          <li>Mettre en valeur des exemples graphiques concrets.</li>
+        </ul>
+      </div>
+
+      <div class="project-block">
+        <h3>Compétences développées</h3>
+        <p>
+          Ce projet m’a permis de renforcer mes compétences en Figma donc en <strong>ux/ui design</strong> pour rendre l’apprentissage visuel et interactif.
+        </p>
+      </div>
+
+      <div class="project-cta">
+        <a href="https://www.figma.com/design/clV1h4a1jijiozKABsfsLL/Site-Info-police?t=RktGcO2O6HTDRjzr-1"
+           target="_blank" rel="noopener" class="btn">🌐 Voir le projet en ligne</a>
+      </div>
+    </div>
+    <div class="project-right">
+      <div class="project-gallery" id="gallery-police" tabindex="0"
+           aria-label="Galerie Police d’écriture (scroll souris)">
+        <div class="project-track">
+          <img src="images/policeaccueil.png" alt="Visuel 1" class="is-active"/>
+          <img src="images/imprimerie.png" alt="Visuel 2"/>
+          <img src="images/plancheinflupolice.png" alt="Visuel 3"/>
+        </div>
+      </div>
+      <div class="project-indicator" aria-hidden="true">
+        <span class="project-bar is-active"></span>
+        <span class="project-bar"></span>
+        <span class="project-bar"></span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <a href="projets.html" class="footer-btn">← Retour aux projets</a>
+    <a href="contact.html" class="btn btn-gradient footer-btn">✉️ Me contacter</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

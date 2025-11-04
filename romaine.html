@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multiplication Romaine - Projet</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <canvas id="particles"></canvas>
+  <canvas id="trail"></canvas>
+
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="projets.html" class="active">Projets</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="hero small">
+    <h1 class="page-title">Multiplication Romaine</h1>
+    <p>Projet Développement</p>
+  </section>
+
+  <section class="project-split">
+    <div class="project-left">
+      <h1 class="project-title">Multiplication Romaine</h1>
+      <p class="project-subtitle">Projet Développement</p>
+
+      <div class="project-block">
+        <h3>Présentation</h3>
+        <p>
+          Un site éducatif qui explique la numération et la multiplication romaine via des outils interactifs.
+          Focus sur la pédagogie, la clarté visuelle et l’accessibilité.
+        </p>
+      </div>
+
+      <ul class="project-meta">
+        <li>Rôle : Front-End Dev</li>
+        <li>Durée : 1 semaine</li>
+        <li>Stack : HTML, CSS, JavaScript</li>
+      </ul>
+
+      <div class="project-block">
+        <h3>Objectifs</h3>
+        <ul>
+          <li>Rendre l’apprentissage visuel et progressif</li>
+          <li>Proposer des exemples concrets et interactifs</li>
+          <li>Optimiser la lecture sur mobile</li>
+        </ul>
+      </div>
+
+      <div class="project-cta">
+        <a href="http://81.194.40.26/~piechocki/SAE_203" target="_blank" rel="noopener" class="btn big">
+          🚀 Voir le projet en ligne
+        </a>
+      </div>
+    </div>
+    <div class="project-right">
+      <div class="project-gallery" id="gallery-romaine" tabindex="0"
+           aria-label="Galerie Multiplication Romaine (scroll souris)">
+        <div class="project-track">
+          <img src="images/romaine_quizz.png" alt="Visuel 1" class="is-active"/>
+          <img src="images/romaine_article.png" alt="Visuel 2"/>
+          <img src="images/romaine.webp" alt="Visuel 3"/>
+        </div>
+      </div>
+      <div class="project-indicator" aria-hidden="true">
+        <span class="project-bar is-active"></span>
+        <span class="project-bar"></span>
+        <span class="project-bar"></span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <a href="projets.html" class="footer-btn">← Retour aux projets</a>
+    <a href="contact.html" class="btn btn-gradient footer-btn">✉️ Me contacter</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

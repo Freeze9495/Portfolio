@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projets - Raphaël Piechocki</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <canvas id="particles"></canvas>
+  <canvas id="trail"></canvas>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="projets.html" class="active">Projets</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero small">
+    <h1 class="page-title">Mes Projets</h1>
+    <p>Découvrez mes réalisations en design, développement et stratégie digitale</p>
+  </section>
+
+  <!-- FILTRES -->
+  <section class="projects-filters">
+    <div class="filter-container">
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="ux-design">🎨 UX/UI Design</button>
+      <button class="filter-btn" data-filter="web-dev">💻 Développement Web</button>
+      <button class="filter-btn" data-filter="comm">📢 Stratégie Comm</button>
+      <button class="filter-btn" data-filter="graphic">✏️ Graphisme</button>
+      <button class="filter-btn" data-filter="audiovisuel">🎬 Audiovisuel</button>
+    </div>
+  </section>
+
+  <!-- GRILLE PROJETS -->
+  <section class="projects-page">
+    <div class="projects-grid" id="projects-grid">
+
+      <!-- PROJET 1 : EQUILIBIO -->
+      <a href="equilibio.html" class="project-card" data-tags="ux-design,comm">
+        <div class="project-image-wrapper">
+          <img src="images/equilibio_mockup.png" alt="Equilibio"/>
+          <div class="project-tags">
+            <span class="tag">UX/UI Design</span>
+            <span class="tag">Stratégie Comm</span>
+          </div>
+        </div>
+        <div class="project-info">
+          <h3>Equilibio</h3>
+          <p>Campagne digitale pour sensibiliser à une alimentation équilibrée. Recherche utilisateur, positionnement et système de contenus.</p>
+        </div>
+      </a>
+
+      <!-- PROJET 2 : NIGHT OF TERROR -->
+      <a href="night.html" class="project-card" data-tags="comm,graphic">
+        <div class="project-image-wrapper">
+          <img src="images/tiktok.png" alt="Night Of Terror"/>
+          <div class="project-tags">
+            <span class="tag">Stratégie Comm</span>
+            <span class="tag">Graphisme</span>
+          </div>
+        </div>
+        <div class="project-info">
+          <h3>Night Of Terror</h3>
+          <p>Stratégie marketing pour jeu vidéo horrifique. Identité visuelle, communiqué de presse et calendrier éditorial.</p>
+        </div>
+      </a>
+
+      <!-- PROJET 3 : KID PADDLE -->
+      <a href="kidpadle.html" class="project-card" data-tags="web-dev,ux-design">
+        <div class="project-image-wrapper">
+          <img src="images/kidpadle.jpg" alt="Kid Paddle"/>
+          <div class="project-tags">
+            <span class="tag">Développement Web</span>
+            <span class="tag">UX/UI Design</span>
+          </div>
+        </div>
+        <div class="project-info">
+          <h3>Kid Paddle</h3>
+          <p>Site web interactif inspiré de la BD. Mise en page responsive et expérience utilisateur engageante.</p>
+        </div>
+      </a>
+
+      <!-- PROJET 4 : MULTIPLICATION ROMAINE -->
+      <a href="romaine.html" class="project-card" data-tags="web-dev">
+        <div class="project-image-wrapper">
+          <img src="images/romaine.webp" alt="Multiplication Romaine"/>
+          <div class="project-tags">
+            <span class="tag">Développement Web</span>
+          </div>
+        </div>
+        <div class="project-info">
+          <h3>Multiplication Romaine</h3>
+          <p>Site éducatif sur les chiffres romains. Application interactive avec algorithme de multiplication antique.</p>
+        </div>
+      </a>
+
+      <!-- PROJET 5 : POLICE D'ÉCRITURE -->
+      <a href="police.html" class="project-card" data-tags="graphic,ux-design">
+        <div class="project-image-wrapper">
+          <img src="images/policeaccueil.png" alt="Police d'Écriture"/>
+          <div class="project-tags">
+            <span class="tag">Graphisme</span>
+            <span class="tag">UX/UI Design</span>
+          </div>
+        </div>
+        <div class="project-info">
+          <h3>Site Police d'Écriture</h3>
+          <p>Plateforme éducative sur l'histoire des polices. Recherche visuelle et présentation interactive.</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="contact.html" class="btn btn-gradient">✉️ Me Contacter</a>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Fonction de filtrage des projets
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          
+          // Retire la classe active de tous les boutons
+          filterBtns.forEach(b => b.classList.remove('active'));
+          // Ajoute la classe active au bouton cliqué
+          btn.classList.add('active');
+
+          const filterValue = btn.getAttribute('data-filter');
+
+          projectCards.forEach(card => {
+            const tags = card.getAttribute('data-tags').split(',');
+            
+            if (filterValue === 'all') {
+              card.style.display = 'block';
+              card.classList.add('fade-in');
+            } else {
+              if (tags.includes(filterValue)) {
+                card.style.display = 'block';
+                card.classList.add('fade-in');
+              } else {
+                card.style.display = 'none';
+                card.classList.remove('fade-in');
+              }
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raphaël Piechocki – Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <canvas id="particles"></canvas>
+  <canvas id="trail"></canvas>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="index.html" class="active">Accueil</a>
+    <a href="projets.html">Projets</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1 id="typing-text"></h1>
+    <p id="rotating-baseline" class="hero-baseline"></p>
+  </header>
+
+  <!-- BIO -->
+  <section class="bio fade-up" id="projets">
+    <img src="images/raph.jpg" alt="Photo de Raphaël Piechocki"/>
+    <div>
+      <p>
+        Actuellement étudiant en BUT Métiers du Multimédia et de l’Internet, passionné par le développement web et la conception UX.
+        Ce portfolio présente mes projets en <strong>développement</strong> et en <strong>stratégie UX</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROJETS PHARES -->
+  <section class="featured-projects fade-up">
+    <h2>Projets phares</h2>
+    <div class="featured-grid">
+      <a href="equilibio.html" class="featured-card">
+        <img src="images/equilibio_mockup.png" alt="Equilibio"/>
+        <div class="overlay">
+          <h3>Equilibio</h3>
+          <p>Projet UX – sensibilisation à une alimentation saine.</p>
+        </div>
+      </a>
+      <a href="kidpadle.html" class="featured-card">
+        <img src="images/kidpadle.jpg" alt="Kid Paddle"/>
+        <div class="overlay">
+          <h3>Kid Paddle</h3>
+          <p>Projet Dev – site interactif inspiré de la BD.</p>
+        </div>
+      </a>
+      <a href="romaine.html" class="featured-card">
+        <img src="images/romaine.webp" alt="Multiplication Romaine"/>
+        <div class="overlay">
+          <h3>Multiplication Romaine</h3>
+          <p>Projet Dev – site éducatif sur les chiffres romains.</p>
+        </div>
+      </a>
+    </div>
+    <a href="projets.html" class="btn">Voir tous les projets</a>
+  </section>
+
+  <!-- OUTILS -->
+  <section class="tools-section fade-up">
+    <h2>Mes outils du quotidien</h2>
+    <div class="tools-marquee" aria-label="Outils défilants">
+      <div class="track" id="tools-track">
+        <div class="tool"><img src="images/icons/figma.png" alt="Figma"/></div>
+        <div class="tool"><img src="images/icons/illustrator.png" alt="Illustrator"/></div>
+        <div class="tool"><img src="images/icons/photoshop.png" alt="Photoshop"/></div>
+        <div class="tool"><img src="images/icons/html.png" alt="HTML"/></div>
+        <div class="tool"><img src="images/icons/css.png" alt="CSS"/></div>
+        <div class="tool"><img src="images/icons/javascript.png" alt="JavaScript"/></div>
+        <div class="tool"><img src="images/icons/php.png" alt="PHP"/></div>
+        <div class="tool"><img src="images/icons/sql.png" alt="SQL"/></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="contact.html" class="footer-btn">✉️ Me Contacter</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
