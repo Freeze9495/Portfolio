@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brochure Restaurant - Raphaël Piechocki</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <canvas id="particles"></canvas>
+  <canvas id="trail"></canvas>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="projets.html">Projets</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- PROJECT SPLIT -->
+  <section class="project-split">
+    <div class="project-left">
+      <h1 class="project-title">Brochure Restaurant</h1>
+      <p class="project-subtitle">Conception graphique multimédia – Sabor Español</p>
+
+      <div class="project-block">
+        <h3>🎨 Concept</h3>
+        <p>Conception visuelle d'une brochure restaurant multi-pages pour un établissement au concept "Sabor Español". Création d'une identité visuelle cohérente et professionnelle mêlant graphisme appliqué et communication visuelle.</p>
+      </div>
+
+      <div class="project-block">
+        <h3>📋 Livrables</h3>
+        <ul class="project-meta">
+          <li>✓ Couverture avec mise en avant du concept</li>
+          <li>✓ Menu détaillé (Tapas, Plats, Desserts)</li>
+          <li>✓ Fiche spécialité (Durùm con Queso)</li>
+          <li>✓ Carte des boissons (Alcooliques & non-alcooliques)</li>
+        </ul>
+      </div>
+
+      <div class="project-block">
+        <h3>🌟 Démarche de conception</h3>
+        <ul class="project-meta">
+          <li>Identité visuelle cohérente (palette terracotta, or, crème)</li>
+          <li>Hiérarchie visuelle et typographie soignée</li>
+          <li>Intégration stratégique d'images produits</li>
+          <li>Retouche photo en Photoshop pour rendu professionnel</li>
+          <li>Cohérence globale de marque</li>
+        </ul>
+      </div>
+
+      <div class="project-block">
+        <h3>💼 Compétences</h3>
+        <ul class="project-meta">
+          <li>Conception InDesign (mise en page multi-pages)</li>
+          <li>Retouche Photoshop (optimisation visuels)</li>
+          <li>Communication graphique appliquée</li>
+          <li>Gestion de composition visuelle</li>
+          <li>Préparation à l'impression professionnelle</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project-right">
+      <div class="project-gallery" id="gallery-brochure">
+        <div class="project-track">
+          <img src="images/Brochure.png" alt="Couverture Brochure"/>
+          <img src="images/Brochuremenu.png" alt="Menu"/>
+          <img src="images/Brochureboisson.png" alt="Carte Boissons"/>
+        </div>
+        <div class="project-indicator">
+          <div class="project-bar"></div>
+          <div class="project-bar"></div>
+          <div class="project-bar"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="contact.html" class="btn btn-gradient">✉️ Me Contacter</a>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        initProjectGallery('gallery-brochure');
+      });
+    } else {
+      initProjectGallery('gallery-brochure');
+    }
+  </script>
+</body>
+</html>
