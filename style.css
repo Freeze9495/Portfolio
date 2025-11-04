@@ -114,23 +114,58 @@ nav a.active { color: var(--doré-clair); }
 /* BIO */
 .bio {
   display: flex;
+  flex-direction: column; /* passage en colonne sur mobile */
   align-items: center;
-  gap: 20px;
-  padding: 80px 20px;
+  gap: clamp(1.5rem, 4vw, 2rem);
+  padding: clamp(2rem, 6vw, 4rem);
   max-width: 1100px;
-  margin: auto;
+  margin: 0 auto;
+  text-align: center;
 }
+
+/* Image de la bio - adaptable */
 .bio img {
   border-radius: 20px;
-  max-width: 250px;
+  max-width: 200px; /* réduit la taille pour mobile */
+  width: 100%;
   border: 3px solid var(--doré);
+  object-fit: cover;
 }
+
+/* Contenu textuel - pady et font size fluide */
 .bio div {
   background: var(--blanc);
-  padding: 20px;
+  padding: clamp(1rem, 4vw, 2rem);
   border-radius: 20px;
   backdrop-filter: blur(12px);
   color: #ddd;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  line-height: 1.6;
+  max-width: 600px; /* limite largeur pour maintient lisible */
+}
+
+/* Texte en particulier pour le paragraphe */
+.bio div p {
+  margin: 0;
+  font-size: inherit; /* pr faire la responsivité avec font-size global */
+  line-height: 1.6;
+}
+
+/* Passage en ligne automatique pour le texte si trop long */
+@media(max-width: 600px){
+  .bio {
+    padding: clamp(1.5rem, 5vw, 2rem);
+    gap: 1.5rem;
+  }
+  .bio div {
+    padding: calc(1rem + 2vw);
+  }
+  .bio div p {
+    font-size: calc(0.85rem + 0.5vw);
+  }
+  .bio img {
+    max-width: 180px; /* adaptation encore plus légère */
+  }
 }
 
 /* PROJETS PHARES */
