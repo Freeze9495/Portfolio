@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agence Côte d'Armor – Raphaël Piechocki</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <canvas id="particles"></canvas>
+  <canvas id="trail"></canvas>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="projets.html">Projets</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- PROJET SPLIT -->
+  <div class="project-split">
+    
+    <!-- PARTIE GAUCHE : INFOS -->
+    <div class="project-left">
+      <h1 class="project-title">Agence Côte d'Armor</h1>
+      <p class="project-subtitle">Design UX/UI – Site immobilier luxe</p>
+
+      <!-- CONTEXTE -->
+      <div class="project-block">
+        <h3>📋 Contexte</h3>
+        <p>
+          Conception d'un site web pour une agence immobilière spécialisée dans le haut de gamme en Bretagne. 
+          L'objectif était de créer une expérience digitale moderne et intuitive qui reflète le prestige des propriétés proposées.
+        </p>
+      </div>
+
+      <!-- OBJECTIFS -->
+      <div class="project-block">
+        <h3>🎯 Objectifs</h3>
+        <ul class="project-meta">
+          <li>✓ Créer une interface élégante et professionnelle</li>
+          <li>✓ Optimiser le parcours utilisateur pour la recherche immobilière</li>
+          <li>✓ Valoriser les biens d'exception par une mise en page soignée</li>
+          <li>✓ Assurer une navigation fluide sur mobile et desktop</li>
+        </ul>
+      </div>
+
+      <!-- OUTILS -->
+      <div class="project-block">
+        <h3>🛠️ Outils utilisés</h3>
+        <ul class="project-meta">
+          <li>• Figma (prototypage et design system)</li>
+          <li>• Adobe Photoshop (retouche images)</li>
+          <li>• User Research & Personas</li>
+        </ul>
+      </div>
+
+      <!-- RÉSULTATS -->
+      <div class="project-block">
+        <h3>📊 Résultats</h3>
+        <p>
+          Interface moderne avec navigation intuitive, système de filtres avancé et galeries photos optimisées. 
+          Design responsive adapté aux différents devices.
+        </p>
+      </div>
+
+      <div class="project-cta">
+        <a href="projets.html" class="btn">← Retour aux projets</a>
+      </div>
+    </div>
+
+    <!-- PARTIE DROITE : GALLERY IMAGES -->
+    <div class="project-right">
+      <div class="project-gallery" tabindex="0" aria-label="Galerie d'images du projet">
+        <div class="project-track">
+          <img src="images/mockupcote-darmor1.png" alt="Mockup Côte d'Armor - Écran 1" class="is-active"/>
+          <img src="images/mockupcote-darmor2.png" alt="Mockup Côte d'Armor - Écran 2"/>
+          <img src="images/mockupcote-darmor3.png" alt="Mockup Côte d'Armor - Écran 3"/>
+        </div>
+        <div class="project-indicator">
+          <div class="project-bar is-active" data-index="0"></div>
+          <div class="project-bar" data-index="1"></div>
+          <div class="project-bar" data-index="2"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="contact.html" class="footer-btn">✉️ Me Contacter</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
