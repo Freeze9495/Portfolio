@@ -43,7 +43,7 @@ export const Home = () => {
   </a>
   <a 
     href="/cvraph.pdf" 
-    download="CV-Raphael-Piechocki.pdf"
+    download="cvraph.pdf"
     className="btn btn-outline"
   >
     Télécharger
