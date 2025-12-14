@@ -6,14 +6,14 @@ export const projectsData = [
     description: 'Application mobile de sensibilisation à une alimentation équilibrée',
     fullDescription: `Projet académique réalisé dans le cadre du BUT MMI. L'objectif était de créer une application mobile de sensibilisation à l'alimentation saine, en utilisant la gamification pour encourager de bonnes habitudes.`,
     
-    image: '/images/equilibio_mockup.png',
-    imageHero: '/images/equilibio_mockup.png',
+    image: '/images/equilibio_mockup.webp',
+    imageHero: '/images/equilibio_mockup.webp',
     videoDescription: '/videos/pub_equlibio.mp4',
-    imageTechnologies: '/images/tel_equilibio.png',
+    imageTechnologies: '/images/tel_equilibio.webp',
     
     gallery: [
-      '/images/Recettes.png',
-      '/images/Progrès.png'
+      '/images/Recettes.webp',
+      '/images/Progrès.webp'
     ],
     
     technologies: ['Figma', 'UX Design', 'UI Design', 'Prototypage'],
@@ -89,7 +89,7 @@ export const projectsData = [
     description: 'Refonte UX complète d\'un site touristique',
     fullDescription: `Refonte complète de l'expérience utilisateur du site touristique des Côtes d'Armor. Audit UX, personas, wireframes, prototypage et tests utilisateurs ont permis d'améliorer significativement la navigation.`,
     
-    image: '/images/cotearmor.png',
+    image: '/images/cotearmor.webp',
     imageHero: '/images/cotearmor.jpg',
     imageDescription: '/images/siteequi.jpg',
     imageTechnologies: '/images/cotearmor.jpg',
@@ -116,7 +116,7 @@ export const projectsData = [
     description: 'Étude typographique créative et expérimentale',
     fullDescription: `Exploration typographique autour de la création d'une police de caractères originale, mêlant modernité et références classiques.`,
     
-    image: '/images/sitepolice_mockup.png',
+    image: '/images/sitepolice_mockup.webp',
     imageHero: '/images/sitepolice_mockup.png',
     imageDescription: '/images/plancheinflupolice.png',
     imageTechnologies: '/images/sitepolice_mockup.png',
@@ -143,7 +143,7 @@ export const projectsData = [
     description: 'Brochure multi-pages pour restaurant espagnol',
     fullDescription: `Création d'une brochure 4 pages pour un restaurant espagnol, mettant en avant ses spécialités culinaires avec une direction artistique chaleureuse.`,
     
-    image: '/images/brochure.png',
+    image: '/images/brochure.webp',
     imageHero: '/images/brochure.png',
     imageDescription: '/images/exrecette.jpg',
     imageTechnologies: '/images/brochure.jpg',
