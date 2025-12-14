@@ -32,14 +32,24 @@ export const Home = () => {
         <HeroTitle text="Raphaël Piechocki" />
         <RotatingBaseline />
         <div className="hero-cta">
-          <a 
-            href="/CV-Raphael-PIECHOCKI-092025-V6.pdf" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="btn"
-          >
-            Voir mon CV
-          </a>
+          <div className="hero-cta">
+  <a 
+    href="/cvraph.pdf" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="btn"
+  >
+    Voir mon CV
+  </a>
+  <a 
+    href="/cvraph.pdf" 
+    download="CV-Raphael-Piechocki.pdf"
+    className="btn btn-outline"
+  >
+    Télécharger
+  </a>
+</div>
+
           <a href="#contact" className="btn btn-outline">
             En recherche de stage
           </a>
