@@ -1,46 +1,35 @@
 export const ToolsMarquee = () => {
   const logos = [
-    { name: 'Figma', icon: '/images/icons/figma.png' },
-    { name: 'Photoshop', icon: '/images/icons/photoshop.png' },
-    { name: 'Illustrator', icon: '/images/icons/illustrator.png' },
-    { name: 'InDesign', icon: '/images/icons/indesign.png' },
-    { name: 'DaVinci Resolve', icon: '/images/icons/davinci.png' },
-    { name: 'HTML5', icon: '/images/icons/html.png' },
-    { name: 'JavaScript', icon: '/images/icons/javascript.png' },
-    { name: 'CSS3', icon: '/images/icons/css.png' },
-    { name: 'SQL', icon: '/images/icons/sql.png' },
-    { name: 'PHP', icon: '/images/icons/php.png' }
+    { src: '/images/icons/figma.png', alt: 'Figma' },
+    { src: '/images/icons/photoshop.png', alt: 'Photoshop' },
+    { src: '/images/icons/illustrator.png', alt: 'Illustrator' },
+    { src: '/images/icons/indesign.png', alt: 'InDesign' },
+    { src: '/images/icons/davinci.png', alt: 'DaVinci Resolve' },
+    { src: '/images/icons/html.png', alt: 'HTML5' },
+    { src: '/images/icons/javascript.png', alt: 'JavaScript' },
+    { src: '/images/icons/css.png', alt: 'CSS3' },
+    { src: '/images/icons/sql.png', alt: 'SQL' },
+    { src: '/images/icons/php.png', alt: 'PHP' }
   ];
 
-  return (
-    <div className="tools-marquee-wrapper">
-      <h2 className="tools-marquee-title">Technologies & Outils</h2>
-      
-      <div className="tools-marquee-container">
-        {/* Premier groupe de logos */}
-        <div className="tools-marquee-group">
-          {logos.map((tool, index) => (
-            <div key={`logo-1-${index}`} className="tool-card">
-              <img 
-                src={tool.icon} 
-                alt={tool.name}
-                className="tool-icon"
-              />
-              <span className="tool-name">{tool.name}</span>
-            </div>
-          ))}
-        </div>
+  // Dupliquer les logos pour l'effet infini
+  const duplicatedLogos = [...logos, ...logos, ...logos];
 
-        {/* Duplication pour l'effet infini */}
-        <div className="tools-marquee-group" aria-hidden="true">
-          {logos.map((tool, index) => (
-            <div key={`logo-2-${index}`} className="tool-card">
+  return (
+    <div className="logoloop-wrapper">
+      <h2 className="logoloop-title">Technologies & Outils</h2>
+      
+      <div className="logoloop-container">
+        <div className="logoloop-track">
+          {duplicatedLogos.map((logo, index) => (
+            <div key={index} className="logoloop-item">
               <img 
-                src={tool.icon} 
-                alt={tool.name}
-                className="tool-icon"
+                src={logo.src} 
+                alt={logo.alt}
+                loading="lazy"
+                draggable="false"
               />
-              <span className="tool-name">{tool.name}</span>
+              <span className="logoloop-label">{logo.alt}</span>
             </div>
           ))}
         </div>
