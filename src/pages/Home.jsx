@@ -41,13 +41,7 @@ export const Home = () => {
   >
     Voir mon CV
   </a>
-  <a 
-    href="/cvraph.pdf" 
-    download="cvraph.pdf"
-    className="btn btn-outline"
-  >
-    Télécharger
-  </a>
+
 </div>
 
           <a href="#contact" className="btn btn-outline">
