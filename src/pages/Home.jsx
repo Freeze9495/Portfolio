@@ -52,25 +52,21 @@ export const Home = () => {
 
       <section className="section about-section">
         <div className="about-grid">
-          {/* BLOC 1 - Introduction */}
-          <div className="about-block">
-            <p className="about-intro">
-              Étudiant en <strong>BUT Métiers du Multimédia et de l'Internet</strong>, 
-              je me spécialise dans le <strong>développement web</strong>, le <strong>design UX/UI</strong> 
-              et la <strong>création d'expériences digitales</strong>. J'aime transformer 
-              les idées en réalités visuelles et interactives.
-            </p>
-          </div>
+         {/* BLOC 1 - Introduction */}
+<div className="about-block">
+  <p className="about-intro">
+    Je m'appelle <strong>Raphaël Piechocki</strong> et je me forme au <strong>développement web</strong> et au <strong>design UX/UI</strong> au sein du BUT Métiers du Multimédia et de l'Internet. J'aime créer des sites qui allient esthétique et fonctionnalité, où chaque détail a son importance.
+  </p>
+</div>
 
-          {/* BLOC 2 - Description */}
-          <div className="about-block">
-            <p className="about-description">
-              Je suis un étudiant en deuxième année de BUT MMI passionné par la création 
-              numérique sous toutes ses formes. Mon objectif : mêler <strong>design graphique</strong>, 
-              <strong>développement web</strong> et <strong>stratégie UX</strong> pour raconter 
-              des histoires visuelles fortes.
-            </p>
-          </div>
+{/* BLOC 2 - Description */}
+<div className="about-block">
+  <p className="about-description">
+    J'accorde beaucoup d'importance à la <strong>qualité du code</strong> et à une <strong>expérience utilisateur fluide</strong>, pour rendre un site performant, agréable à utiliser et facile à faire évoluer. 
+    Ce qui me motive le plus, c'est de <strong>transformer des idées en réalités digitales</strong> qui servent vraiment aux utilisateurs et donnent vie aux projets.
+  </p>
+</div>
+
 
           {/* COLONNE DROITE - Photo + Badge stage */}
           <div className="about-right">
