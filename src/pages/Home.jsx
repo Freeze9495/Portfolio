@@ -71,7 +71,7 @@ export const Home = () => {
     {/* COLONNE DROITE - Photo + Badge stage */}
     <div className="about-right">
       <div className="about-photo">
-        <img src="/images/raph.jpg" alt="Raphaël Piechocki" />
+        <img src="/images/raph.png" alt="Raphaël Piechocki" />
       </div>
       
       {/* Badge recherche de stage */}
