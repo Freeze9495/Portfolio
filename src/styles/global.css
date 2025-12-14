@@ -1077,3 +1077,204 @@ body {
 .project-gallery video:hover {
   transform: scale(1.05);
 }
+
+
+/* ===================================
+   TOOLS MARQUEE - LOGO LOOP OR
+   =================================== */
+
+/* Container principal */
+.tools-marquee-wrapper {
+  width: 100%;
+  padding: 80px 0;
+  background: linear-gradient(180deg, 
+    rgba(0, 0, 0, 0.95) 0%, 
+    rgba(10, 10, 10, 0.98) 100%
+  );
+  overflow: hidden;
+  position: relative;
+}
+
+/* Titre de la section */
+.tools-marquee-title {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 60px;
+  background: linear-gradient(
+    135deg,
+    #FFD700 0%,
+    #FFC700 25%,
+    #FFB700 50%,
+    #FFA500 75%,
+    #FFD700 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldShimmer 3s ease-in-out infinite;
+}
+
+@keyframes goldShimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Container de l'animation */
+.tools-marquee-container {
+  display: flex;
+  gap: 40px;
+  animation: scroll-left 30s linear infinite;
+  width: fit-content;
+}
+
+.tools-marquee-container:hover {
+  animation-play-state: paused;
+}
+
+/* Groupe de logos */
+.tools-marquee-group {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Carte de chaque outil */
+.tool-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 32px 40px;
+  min-width: 180px;
+  background: linear-gradient(
+    145deg,
+    rgba(20, 20, 20, 0.9),
+    rgba(30, 30, 30, 0.8)
+  );
+  border: 2px solid transparent;
+  border-radius: 20px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+/* Bordure dorée au hover */
+.tool-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(
+    135deg,
+    #FFD700,
+    #FFC700,
+    #FFB700,
+    #FFA500
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.tool-card:hover::before {
+  opacity: 1;
+}
+
+.tool-card:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 
+    0 20px 60px rgba(255, 215, 0, 0.25),
+    0 0 40px rgba(255, 215, 0, 0.15);
+}
+
+/* Icône */
+.tool-icon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(255, 215, 0, 0.3));
+  transition: all 0.4s ease;
+}
+
+.tool-card:hover .tool-icon {
+  filter: 
+    drop-shadow(0 8px 20px rgba(255, 215, 0, 0.5))
+    brightness(1.2);
+  transform: scale(1.15) rotateY(10deg);
+}
+
+/* Nom de l'outil */
+.tool-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #e0e0e0;
+  transition: all 0.4s ease;
+  text-align: center;
+}
+
+.tool-card:hover .tool-name {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(1.1);
+}
+
+/* Animation de défilement */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tools-marquee-wrapper {
+    padding: 60px 0;
+  }
+
+  .tools-marquee-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .tools-marquee-container {
+    gap: 24px;
+  }
+
+  .tools-marquee-group {
+    gap: 24px;
+  }
+
+  .tool-card {
+    padding: 24px 28px;
+    min-width: 140px;
+  }
+
+  .tool-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .tool-name {
+    font-size: 14px;
+  }
+}
