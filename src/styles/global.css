@@ -1080,22 +1080,32 @@ body {
 
 
 /* ===================================
-   LOGO LOOP - Style ReactBits
+   TOOLS MARQUEE - LOGO LOOP OR
    =================================== */
 
-.logoloop-wrapper {
+/* Container principal */
+.tools-marquee-wrapper {
   width: 100%;
   padding: 60px 0;
-  position: relative;
+  background: transparent; /* ✅ Plus de barre noire */
   overflow: hidden;
+  position: relative;
 }
 
-.logoloop-title {
+/* Titre de la section */
+.tools-marquee-title {
   text-align: center;
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 700;
-  margin-bottom: 50px;
-  background: linear-gradient(135deg, #FFD700, #FFC700, #FFB700, #FFA500);
+  margin-bottom: 40px;
+  background: linear-gradient(
+    135deg,
+    #FFD700 0%,
+    #FFC700 25%,
+    #FFB700 50%,
+    #FFA500 75%,
+    #FFD700 100%
+  );
   background-size: 200% 200%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -1104,138 +1114,164 @@ body {
 }
 
 @keyframes goldShimmer {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
-.logoloop-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-/* Dégradés sur les bords (fade effect) */
-.logoloop-container::before,
-.logoloop-container::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: clamp(40px, 10%, 150px);
-  pointer-events: none;
-  z-index: 10;
-}
-
-.logoloop-container::before {
-  left: 0;
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
-}
-
-.logoloop-container::after {
-  right: 0;
-  background: linear-gradient(
-    to left,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
-}
-
-.logoloop-track {
+/* Container de l'animation */
+.tools-marquee-container {
   display: flex;
-  gap: 60px;
-  width: max-content;
-  animation: scroll-infinite 30s linear infinite;
-  will-change: transform;
-  user-select: none;
+  gap: 24px; /* ✅ Réduit */
+  animation: scroll-left 30s linear infinite;
+  width: fit-content;
 }
 
-.logoloop-track:hover {
+.tools-marquee-container:hover {
   animation-play-state: paused;
 }
 
-@keyframes scroll-infinite {
+/* Groupe de logos */
+.tools-marquee-group {
+  display: flex;
+  gap: 24px; /* ✅ Réduit */
+  align-items: center;
+}
+
+/* Carte de chaque outil */
+.tool-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px; /* ✅ Réduit */
+  padding: 20px 24px; /* ✅ Réduit */
+  min-width: 120px; /* ✅ Réduit */
+  background: linear-gradient(
+    145deg,
+    rgba(20, 20, 20, 0.6),
+    rgba(30, 30, 30, 0.5)
+  );
+  border: 2px solid transparent;
+  border-radius: 16px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+/* Bordure dorée au hover */
+.tool-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: linear-gradient(
+    135deg,
+    #FFD700,
+    #FFC700,
+    #FFB700,
+    #FFA500
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.tool-card:hover::before {
+  opacity: 1;
+}
+
+.tool-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 
+    0 16px 48px rgba(255, 215, 0, 0.2),
+    0 0 32px rgba(255, 215, 0, 0.12);
+}
+
+/* Icône */
+.tool-icon {
+  width: 40px; /* ✅ 40px comme demandé */
+  height: 40px;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 10px rgba(255, 215, 0, 0.3));
+  transition: all 0.4s ease;
+}
+
+.tool-card:hover .tool-icon {
+  filter: 
+    drop-shadow(0 6px 16px rgba(255, 215, 0, 0.5))
+    brightness(1.2);
+  transform: scale(1.15) rotateY(10deg);
+}
+
+/* Nom de l'outil */
+.tool-name {
+  font-size: 14px; /* ✅ Réduit */
+  font-weight: 600;
+  color: #e0e0e0;
+  transition: all 0.4s ease;
+  text-align: center;
+}
+
+.tool-card:hover .tool-name {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(1.1);
+}
+
+/* Animation de défilement */
+@keyframes scroll-left {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-33.333%);
+    transform: translateX(-50%);
   }
-}
-
-.logoloop-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  flex: 0 0 auto;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.logoloop-item:hover {
-  transform: scale(1.15);
-}
-
-.logoloop-item img {
-  height: 48px;
-  width: auto;
-  display: block;
-  object-fit: contain;
-  
-  /* 🌟 FILTRE OR MAGIQUE 🌟 */
-  filter: brightness(0) saturate(100%) invert(72%) sepia(70%) saturate(600%) hue-rotate(5deg) brightness(105%) contrast(101%);
-  
-  transition: all 0.3s ease;
-  pointer-events: none;
-  -webkit-user-drag: none;
-}
-
-.logoloop-item:hover img {
-  filter: brightness(0) saturate(100%) invert(72%) sepia(70%) saturate(800%) hue-rotate(5deg) brightness(110%) contrast(105%);
-  transform: scale(1.05);
-}
-
-.logoloop-label {
-  font-size: 14px;
-  font-weight: 600;
-  color: #888;
-  transition: color 0.3s ease;
-  white-space: nowrap;
-}
-
-.logoloop-item:hover .logoloop-label {
-  color: #FFD700;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .logoloop-wrapper {
+  .tools-marquee-wrapper {
     padding: 40px 0;
   }
 
-  .logoloop-title {
-    font-size: 1.6rem;
-    margin-bottom: 35px;
+  .tools-marquee-title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
   }
 
-  .logoloop-track {
-    gap: 40px;
+  .tools-marquee-container {
+    gap: 16px;
   }
 
-  .logoloop-item img {
-    height: 36px;
+  .tools-marquee-group {
+    gap: 16px;
   }
 
-  .logoloop-label {
+  .tool-card {
+    padding: 16px 20px;
+    min-width: 100px;
+  }
+
+  .tool-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .tool-name {
     font-size: 12px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .logoloop-track {
-    animation: none !important;
   }
 }
