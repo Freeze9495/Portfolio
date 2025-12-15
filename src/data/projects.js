@@ -44,8 +44,8 @@ export const projectsData = [
       '/images/affichenight.png'
     ],
     
-    technologies: ['HTML5', 'CSS3', 'JavaScript'],
-    tags: ['HTML', 'CSS', 'JavaScript', 'Responsive'],
+    technologies: ['HTML5', 'CSS3', 'InDesign','Photoshop'],
+    tags: ['HTML', 'CSS', 'StratComm', 'Design'],
     featured: true,
     
     projectLink: 'https://www.figma.com/proto/PmQdmMujoDtLmFU3lIJWRz/Night-of-Terrror?node-id=0-9&t=4SCKV3aIP2Bnjm2v-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=0%3A9',
