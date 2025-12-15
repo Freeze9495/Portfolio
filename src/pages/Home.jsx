@@ -50,22 +50,20 @@ export const Home = () => {
         </div>
       </section>
 
-      <section className="section about-section">
-        <div className="about-grid">
-         {/* BLOC 1 - Introduction */}
-<div className="about-block">
-  <p className="about-intro">
-    Je m'appelle <strong>Raphaël Piechocki</strong> et je me forme au <strong>développement web</strong> et au <strong>design UX/UI</strong> au sein du BUT Métiers du Multimédia et de l'Internet. J'aime créer des sites qui allient esthétique et fonctionnalité, où chaque détail a son importance.
-  </p>
-</div>
+      <section id="about" className="about-section">
+  <div className="about-content">
+    <div className="about-text">
+      <p className="about-paragraph">
+        Je m'appelle <strong>Raphaël Piechocki</strong> et je me forme au <strong>développement web</strong> et au <strong>design UX/UI</strong> au sein du BUT Métiers du Multimédia et de l'Internet. 
+      </p>
+      <p className="about-paragraph">
+        J'aime créer des sites qui allient esthétique et fonctionnalité, où chaque détail compte. J'accorde beaucoup d'importance à la <strong>qualité du code</strong> et à une <strong>expérience utilisateur fluide</strong>, pour rendre un site performant, agréable à utiliser et facile à faire évoluer.
+      </p>
+      <p className="about-paragraph">
+        Ce qui me motive le plus, c'est de <strong>transformer des idées en réalités digitales</strong> qui servent vraiment aux utilisateurs et donnent vie aux projets.
+      </p>
+    </div>
 
-{/* BLOC 2 - Description */}
-<div className="about-block">
-  <p className="about-description">
-    J'accorde beaucoup d'importance à la <strong>qualité du code</strong> et à une <strong>expérience utilisateur fluide</strong>, pour rendre un site performant, agréable à utiliser et facile à faire évoluer. 
-    Ce qui me motive le plus, c'est de <strong>transformer des idées en réalités digitales</strong> qui servent vraiment aux utilisateurs et donnent vie aux projets.
-  </p>
-</div>
 
 
           {/* COLONNE DROITE - Photo + Badge stage */}

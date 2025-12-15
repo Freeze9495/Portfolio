@@ -742,59 +742,36 @@ body {
 }
 
 
-/* ========== ABOUT SECTION ========== */
 .about-section {
-  padding: 5rem 5%;
+  padding: 100px 5%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.about-grid {
+.about-content {
   display: grid;
-  grid-template-columns: 1fr 1fr 300px;
-  gap: 3rem;
-  align-items: start;
-  margin-top: 3rem;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
-/* Blocs de texte stylisés */
-.about-block {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(212, 175, 55, 0.15);
-  border-radius: 20px;
-  padding: 2.5rem;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+/* TEXTE */
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.about-block:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(212, 175, 55, 0.3);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
-}
-
-/* Texte d'introduction */
-.about-intro {
-  font-size: 1.15rem;
+.about-paragraph {
+  font-size: 1.1rem;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.9);
-  font-weight: 300;
-  margin: 0;
+  text-align: justify;
 }
 
-/* Texte de description */
-.about-description {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.85);
-  font-weight: 300;
-  margin: 0;
-}
-
-.about-intro strong,
-.about-description strong {
-  color: var(--doré);
+.about-paragraph strong {
+  color: var(--gold);
   font-weight: 600;
 }
 
