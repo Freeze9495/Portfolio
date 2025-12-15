@@ -741,68 +741,143 @@ body {
   }
 }
 
-
-Ah pardon ! Voici juste le CSS pour la bio (les textes blancs), sans toucher à la photo ni à la carte stage :
-
-🎨 CSS À MODIFIER dans global.css
-Remplace juste la partie .about-section existante par :
-
-css
 /* ========================================
-   SECTION ABOUT - BIO TEXTE UNIQUEMENT
+   SECTION ABOUT - VERSION STYLÉE
 ======================================== */
 .about-section {
-  padding: 100px 5%;
-  max-width: 1200px;
+  padding: 120px 5%;
+  max-width: 1400px;
   margin: 0 auto;
+  position: relative;
 }
 
 .about-content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 80px;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
+  position: relative;
 }
 
-/* TEXTES BIO */
+/* TEXTES BIO - AVEC FOND ET BORDURE */
 .about-text {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
+  background: linear-gradient(135deg, rgba(30, 30, 30, 0.6), rgba(20, 20, 20, 0.8));
+  padding: 50px 40px;
+  border-radius: 20px;
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
 }
 
+/* EFFET DE LIGNE DORÉE EN HAUT */
+.about-text::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--gold), 
+    transparent
+  );
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* PARAGRAPHES */
 .about-intro,
 .about-description,
 .about-motivation {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.9);
-  text-align: justify;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.85);
   margin: 0;
+  text-align: left;
+  position: relative;
+  padding-left: 20px;
 }
 
+/* BARRE VERTICALE DORÉE À GAUCHE */
+.about-intro::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, 
+    var(--gold), 
+    rgba(212, 175, 55, 0.3)
+  );
+}
+
+/* MOTS-CLÉS EN OR + EFFET GLOW */
 .about-intro strong,
 .about-description strong,
 .about-motivation strong {
   color: var(--gold);
-  font-weight: 600;
+  font-weight: 700;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  transition: all 0.3s ease;
+}
+
+.about-text:hover strong {
+  text-shadow: 0 0 30px rgba(212, 175, 55, 0.7);
 }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .about-content {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 50px;
+  }
+
+  .about-text {
+    padding: 40px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 80px 5%;
+  }
+
+  .about-text {
+    padding: 30px 25px;
   }
 
   .about-intro,
   .about-description,
   .about-motivation {
     font-size: 1rem;
-    text-align: left;
+    padding-left: 15px;
   }
 }
+
+@media (max-width: 480px) {
+  .about-text {
+    padding: 25px 20px;
+  }
+
+  .about-intro,
+  .about-description,
+  .about-motivation {
+    font-size: 0.95rem;
+  }
+}
+
 
 /* Colonne droite - Photo + Badge */
 .about-right {
