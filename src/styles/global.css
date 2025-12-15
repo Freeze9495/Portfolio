@@ -742,6 +742,15 @@ body {
 }
 
 
+Ah pardon ! Voici juste le CSS pour la bio (les textes blancs), sans toucher à la photo ni à la carte stage :
+
+🎨 CSS À MODIFIER dans global.css
+Remplace juste la partie .about-section existante par :
+
+css
+/* ========================================
+   SECTION ABOUT - BIO TEXTE UNIQUEMENT
+======================================== */
 .about-section {
   padding: 100px 5%;
   max-width: 1200px;
@@ -756,23 +765,43 @@ body {
   margin-bottom: 40px;
 }
 
-/* TEXTE */
+/* TEXTES BIO */
 .about-text {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.about-paragraph {
+.about-intro,
+.about-description,
+.about-motivation {
   font-size: 1.1rem;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.9);
   text-align: justify;
+  margin: 0;
 }
 
-.about-paragraph strong {
+.about-intro strong,
+.about-description strong,
+.about-motivation strong {
   color: var(--gold);
   font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-intro,
+  .about-description,
+  .about-motivation {
+    font-size: 1rem;
+    text-align: left;
+  }
 }
 
 /* Colonne droite - Photo + Badge */
