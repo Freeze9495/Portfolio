@@ -689,7 +689,7 @@ body {
 }
 
 .project-gallery img {
-  width: 100%;
+  width: 80%;
   border-radius: 16px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease;
