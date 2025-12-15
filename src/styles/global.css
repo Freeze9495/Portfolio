@@ -741,203 +741,62 @@ body {
   }
 }
 
-/* ========================================
-   SECTION ABOUT - STYLE MODERNE 2025
-======================================== */
+
+/* ========== ABOUT SECTION ========== */
 .about-section {
-  padding: 120px 5%;
+  padding: 5rem 5%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* TITRE DE SECTION */
-.about-section h2 {
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--gold);
-  margin-bottom: 60px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  position: relative;
-  display: inline-block;
-}
-
-.about-section h2::after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: 0;
-  width: 80px;
-  height: 4px;
-  background: var(--gold);
-}
-
-/* LAYOUT */
-.about-content {
+.about-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 80px;
+  grid-template-columns: 1fr 1fr 300px;
+  gap: 3rem;
   align-items: start;
-  margin-bottom: 60px;
+  margin-top: 3rem;
 }
 
-/* BLOC TEXTE */
-.about-text {
-  display: flex;
-  flex-direction: column;
-  gap: 35px;
+/* Blocs de texte stylisés */
+.about-block {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 20px;
+  padding: 2.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
 }
 
-/* PARAGRAPHES - TRÈS LISIBLES */
-.about-intro,
-.about-description,
-.about-motivation {
-  font-size: 1.25rem;
-  line-height: 2;
-  color: #ffffff;
-  margin: 0;
-  font-weight: 400;
-  letter-spacing: 0.3px;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease forwards;
+.about-block:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(212, 175, 55, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
 }
 
+/* Texte d'introduction */
 .about-intro {
-  animation-delay: 0.2s;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  margin: 0;
 }
 
+/* Texte de description */
 .about-description {
-  animation-delay: 0.4s;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 300;
+  margin: 0;
 }
 
-.about-motivation {
-  animation-delay: 0.6s;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* MOTS-CLÉS EN OR - TRÈS VISIBLES */
 .about-intro strong,
-.about-description strong,
-.about-motivation strong {
-  color: var(--gold);
-  font-weight: 700;
-  font-size: 1.3rem;
-  display: inline-block;
-  position: relative;
-  padding: 0 4px;
+.about-description strong {
+  color: var(--doré);
+  font-weight: 600;
 }
-
-/* EFFET UNDERLINE SUR HOVER */
-.about-intro strong::after,
-.about-description strong::after,
-.about-motivation strong::after {
-  content: '';
-  position: absolute;
-  bottom: 2px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--gold);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
-}
-
-.about-intro strong:hover::after,
-.about-description strong:hover::after,
-.about-motivation strong:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-/* NUMÉROS DE LIGNE (OPTIONNEL) */
-.about-intro::before {
-  content: '01';
-  position: absolute;
-  left: -60px;
-  font-size: 1rem;
-  color: var(--gold);
-  opacity: 0.5;
-  font-weight: 700;
-}
-
-.about-description::before {
-  content: '02';
-  position: absolute;
-  left: -60px;
-  font-size: 1rem;
-  color: var(--gold);
-  opacity: 0.5;
-  font-weight: 700;
-}
-
-.about-motivation::before {
-  content: '03';
-  position: absolute;
-  left: -60px;
-  font-size: 1rem;
-  color: var(--gold);
-  opacity: 0.5;
-  font-weight: 700;
-}
-
-.about-intro,
-.about-description,
-.about-motivation {
-  position: relative;
-  padding-left: 60px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .about-content {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-
-  .about-section h2 {
-    font-size: 2.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .about-section {
-    padding: 80px 5%;
-  }
-
-  .about-section h2 {
-    font-size: 2rem;
-    margin-bottom: 40px;
-  }
-
-  .about-intro,
-  .about-description,
-  .about-motivation {
-    font-size: 1.1rem;
-    padding-left: 0;
-  }
-
-  .about-intro::before,
-  .about-description::before,
-  .about-motivation::before {
-    display: none;
-  }
-
-  .about-intro strong,
-  .about-description strong,
-  .about-motivation strong {
-    font-size: 1.15rem;
-  }
-}
-
-
 
 /* Colonne droite - Photo + Badge */
 .about-right {
