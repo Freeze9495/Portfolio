@@ -742,24 +742,23 @@ body {
 }
 
 
-/* ========== ABOUT SECTION ========== */
 .about-section {
   padding: 5rem 5%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Grid principale : 2 colonnes texte + 1 colonne droite */
-.about-grid {
+/* Container principal : texte + photo/badge */
+.about-content {
   display: grid;
-  grid-template-columns: 1fr 1fr 320px;
-  gap: 3rem;
+  grid-template-columns: 1fr 320px;
+  gap: 4rem;
   align-items: start;
   margin-top: 3rem;
 }
 
-/* ========== BLOCS DE TEXTE PREMIUM ========== */
-.about-block {
+/* ========== BLOC DE TEXTE PREMIUM ========== */
+.about-text {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
   border: 1px solid rgba(212, 175, 55, 0.2);
   border-radius: 24px;
@@ -772,7 +771,7 @@ body {
 }
 
 /* Effet de glow doré au hover */
-.about-block::before {
+.about-text::before {
   content: '';
   position: absolute;
   top: 0;
@@ -783,11 +782,11 @@ body {
   transition: left 0.6s ease;
 }
 
-.about-block:hover::before {
+.about-text:hover::before {
   left: 100%;
 }
 
-.about-block:hover {
+.about-text:hover {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
   border-color: rgba(212, 175, 55, 0.4);
   transform: translateY(-8px);
@@ -795,32 +794,32 @@ body {
               0 0 40px rgba(212, 175, 55, 0.08);
 }
 
-/* ========== TYPOGRAPHIE HIÉRARCHISÉE ========== */
-/* Texte d'introduction (1er paragraphe - impact fort) */
-.about-intro {
-  font-size: 1.2rem;
+/* ========== PARAGRAPHES STYLISÉS ========== */
+.about-paragraph {
+  font-size: 1.1rem;
   line-height: 1.9;
-  color: rgba(255, 255, 255, 0.95); /* ✅ Contraste amélioré */
+  color: rgba(255, 255, 255, 0.92);
   font-weight: 300;
-  margin: 0 0 1.5rem 0; /* ✅ Espacement ajouté */
+  margin: 0 0 1.5rem 0;
   letter-spacing: 0.02em;
 }
 
-/* Texte de description (paragraphes suivants) */
-.about-description {
-  font-size: 1.05rem;
-  line-height: 1.85;
-  color: rgba(255, 255, 255, 0.88); /* ✅ Contraste amélioré */
-  font-weight: 300;
-  margin: 1.5rem 0 0 0; /* ✅ Respiration entre paragraphes */
+/* Dernier paragraphe sans marge en bas */
+.about-paragraph:last-child {
+  margin-bottom: 0;
 }
 
-/* Mots-clés en doré */
-.about-intro strong,
-.about-description strong {
+/* Premier paragraphe plus grand (intro) */
+.about-paragraph:first-child {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Mots-clés en doré avec glow */
+.about-paragraph strong {
   color: var(--doré);
   font-weight: 600;
-  text-shadow: 0 0 20px rgba(212, 175, 55, 0.3); /* ✅ Glow subtil */
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
 }
 
 /* ========== COLONNE DROITE : PHOTO + BADGE ========== */
@@ -846,25 +845,25 @@ body {
   object-fit: cover;
   border: 4px solid var(--doré);
   box-shadow: 0 16px 48px rgba(212, 175, 55, 0.35),
-              0 0 60px rgba(212, 175, 55, 0.15); /* ✅ Double shadow pour plus de profondeur */
+              0 0 60px rgba(212, 175, 55, 0.15);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .about-photo img:hover {
-  transform: scale(1.05) rotate(2deg); /* ✅ Rotation légère ajoutée */
+  transform: scale(1.05) rotate(2deg);
   box-shadow: 0 20px 60px rgba(212, 175, 55, 0.45),
               0 0 80px rgba(212, 175, 55, 0.2);
   border-color: var(--doré-clair);
 }
 
-/* Badge de recherche de stage (ne touche pas) */
+/* ========== BADGE STAGE PREMIUM ========== */
 .stage-badge {
   display: flex;
   align-items: center;
   gap: 1rem;
   padding: 1.5rem 1.8rem;
   background: linear-gradient(135deg, rgba(212, 175, 55, 0.18), rgba(212, 175, 55, 0.08));
-  border: 2px solid rgba(212, 175, 55, 0.45); /* ✅ Bordure plus visible */
+  border: 2px solid rgba(212, 175, 55, 0.45);
   border-radius: 18px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -925,13 +924,12 @@ body {
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 1024px) {
-  .about-grid {
+  .about-content {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
 
   .about-right {
-    order: -1;
     position: relative;
     top: 0;
     flex-direction: row;
@@ -952,16 +950,16 @@ body {
 }
 
 @media (max-width: 768px) {
-  .about-block {
+  .about-text {
     padding: 2.5rem;
   }
 
-  .about-intro {
-    font-size: 1.1rem;
+  .about-paragraph {
+    font-size: 1rem;
   }
 
-  .about-description {
-    font-size: 1rem;
+  .about-paragraph:first-child {
+    font-size: 1.1rem;
   }
 
   .about-right {
@@ -984,137 +982,6 @@ body {
 
   .stage-icon {
     font-size: 2.2rem;
-  }
-}
-
-/* Colonne droite - Photo + Badge */
-.about-right {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  position: sticky;
-  top: 120px;
-}
-
-/* Photo */
-.about-photo {
-  display: flex;
-  justify-content: center;
-}
-
-.about-photo img {
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid var(--doré);
-  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
-  transition: all 0.4s ease;
-}
-
-.about-photo img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 20px 50px rgba(212, 175, 55, 0.4);
-}
-
-/* Badge de recherche de stage */
-.stage-badge {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.2rem 1.5rem;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  border-radius: 16px;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-}
-
-.stage-badge:hover {
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.08));
-  border-color: rgba(212, 175, 55, 0.6);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
-}
-
-.stage-icon {
-  font-size: 1.5rem;
-  flex-shrink: 0;
-}
-
-.stage-text {
-  flex: 1;
-}
-
-.stage-text strong {
-  display: block;
-  color: var(--doré-clair);
-  font-size: 0.95rem;
-  font-weight: 700;
-  margin-bottom: 0.3rem;
-}
-
-.stage-text p {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.85rem;
-  margin: 0;
-  font-weight: 400;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .about-right {
-    order: -1;
-    position: relative;
-    top: 0;
-    flex-direction: row;
-    align-items: center;
-    gap: 2rem;
-  }
-  
-  .about-photo img {
-    width: 200px;
-    height: 200px;
-  }
-  
-  .stage-badge {
-    flex: 1;
-  }
-}
-
-@media (max-width: 768px) {
-  .about-block {
-    padding: 2rem;
-  }
-  
-  .about-intro,
-  .about-description {
-    font-size: 1rem;
-  }
-  
-  .about-right {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .stage-badge {
-    flex-direction: column;
-    text-align: center;
-    padding: 1rem;
-  }
-  
-  .stage-icon {
-    font-size: 2rem;
-  }
-  
-  .about-photo img {
-    width: 180px;
-    height: 180px;
   }
 }
 
