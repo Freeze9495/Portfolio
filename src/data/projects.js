@@ -33,15 +33,15 @@ export const projectsData = [
     description: 'Projet de communication autour du jeu vidéo fictif Night of Terror',
     fullDescription: `Site vitrine pour promouvoir un jeu vidéo fictif de type horreur, avec une ambiance sombre et immersive. Intégration de vidéos, animations CSS et design responsive.`,
     
-    image: '/images/night.png',
+    image: '/images/night.webp',
     imageHero: '/videos/pub_night.mp4',
     imageDescription: '/images/nightprojet.png',
     imageTechnologies: '/images/affichenight.png',
     
     gallery: [
-      '/images/night.jpg',
-      '/images/nightprojet.jpg',
-      '/images/affichenight.jpg'
+      '/images/night.webp',
+      '/images/nightprojet.png',
+      '/images/affichenight.png'
     ],
     
     technologies: ['HTML5', 'CSS3', 'JavaScript'],
