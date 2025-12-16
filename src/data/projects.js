@@ -144,7 +144,7 @@ export const projectsData = [
     fullDescription: `Création d'une brochure 4 pages pour un restaurant espagnol, mettant en avant ses spécialités culinaires avec une direction artistique chaleureuse.`,
     
     image: '/images/brochure.webp',
-    imageHero: '/images/brochure.png',
+    imageHero: '/images/brochure2.webp',
     imageDescription: '/images/exrecette.jpg',
     imageTechnologies: '/images/brochure.jpg',
     
