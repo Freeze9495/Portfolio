@@ -59,7 +59,7 @@ export const projectsData = [
     title: 'Romaine',
     category: 'Développement',
     description: 'Site web responsive moderne avec design épuré',
-    fullDescription: `Projet web vitrine minimaliste axé sur l'expérience utilisateur, avec un design épuré et une navigation intuitive.`,
+    fullDescription: `Projet web vitrine minimaliste axé sur l'expérience utilisateur, avec un design épuré et une navigation intuitive.Avec possibilité de créer un compte, s'y connecter ainsi qu'ajouter des commentaires et articles sur le site`,
     
     image: '/images/romaine.webp',
     imageHero: '/images/romaine.jpg',
@@ -67,8 +67,8 @@ export const projectsData = [
     imageTechnologies: '/images/romaine_quizz.png',
     
     gallery: [
-      '/images/romaine.jpg',
-      '/images/romaine_article.jpg',
+      '/images/romainearticle.png',
+      '/images/romaineconnexion.png',
       '/images/romaine_quizz.jpg'
     ],
     
