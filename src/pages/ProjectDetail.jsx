@@ -2,17 +2,21 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { projectsData } from '../data/projects';
 import { useEffect } from 'react';
 
+
 export const ProjectDetail = () => {
   const { id } = useParams();
   const project = projectsData.find(p => p.id === id);
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+
   if (!project) {
     return <Navigate to="/projets" />;
   }
+
 
   // 🎯 Fonction pour détecter si c'est une vidéo
   const isVideo = (url) => {
@@ -20,6 +24,7 @@ export const ProjectDetail = () => {
     const videoExtensions = ['.mp4', '.webm', '.ogg', '.mov'];
     return videoExtensions.some(ext => url.toLowerCase().endsWith(ext));
   };
+
 
   // 🎯 Composant pour afficher image ou vidéo
   const MediaElement = ({ src, alt, className = '' }) => {
@@ -38,6 +43,7 @@ export const ProjectDetail = () => {
     return <img src={src} alt={alt} className={className} />;
   };
 
+
   return (
     <div className="project-detail">
       {/* Back button */}
@@ -45,11 +51,13 @@ export const ProjectDetail = () => {
         ← Retour aux projets
       </Link>
 
+
       {/* Header */}
       <div className="project-detail-header">
         <h1>{project.title}</h1>
         <span className="tag">{project.category}</span>
       </div>
+
 
       {/* 🎥 Hero avec support vidéo */}
       <div className="project-hero-image">
@@ -58,6 +66,7 @@ export const ProjectDetail = () => {
           alt={project.title}
         />
       </div>
+
 
       {/* Section 1 - Description */}
       <section className="project-two-cols">
@@ -74,32 +83,24 @@ export const ProjectDetail = () => {
         )}
       </section>
 
-      {/* Section 2 - Technologies */}
+
+      {/* Section 2 - Technologies ✅ CORRIGÉ */}
       {project.imageTechnologies && (
-  <div className="project-two-cols reverse">
-    {project.imageTechnologies.endsWith('.mp4') || 
-     project.imageTechnologies.endsWith('.webm') ? (
-      <video 
-        src={project.imageTechnologies} 
-        className="project-video"
-        autoPlay 
-        loop 
-        muted 
-        playsInline
-      />
-    ) : (
-      <img src={project.imageTechnologies} alt={`Technologies ${project.title}`} />
-    )}
-    <div className="section-text">
-      <h2>Technologies utilisées</h2>
-      <ul className="tech-list">
-        {project.technologies.map((tech, i) => (
-          <span key={i} className="tag">{tech}</span>
-        ))}
-      </ul>
-    </div>
-  </div>
-)}
+        <div className="project-two-cols reverse">
+          <MediaElement 
+            src={project.imageTechnologies} 
+            alt={`Technologies ${project.title}`}
+          />
+          <div className="section-text">
+            <h2>Technologies utilisées</h2>
+            <ul className="tech-list">
+              {project.technologies.map((tech, i) => (
+                <span key={i} className="tag">{tech}</span>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
 
 
       {/* 🎥 Galerie avec support vidéo */}
@@ -117,6 +118,7 @@ export const ProjectDetail = () => {
           </div>
         </section>
       )}
+
 
       {/* Boutons d'action */}
       <div className="project-actions">
