@@ -75,22 +75,32 @@ export const ProjectDetail = () => {
       </section>
 
       {/* Section 2 - Technologies */}
-      {project.technologies && project.technologies.length > 0 && (
-        <section className="project-two-cols reverse">
-          <MediaElement 
-            src={project.imageTechnologies || project.image} 
-            alt={`${project.title} - Technologies`}
-          />
-          <div className="section-text">
-            <h2>Technologies utilisées</h2>
-            <ul>
-              {project.technologies.map((tech, index) => (
-                <li key={index}>{tech}</li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      )}
+      {project.imageTechnologies && (
+  <div className="project-two-cols reverse">
+    {project.imageTechnologies.endsWith('.mp4') || 
+     project.imageTechnologies.endsWith('.webm') ? (
+      <video 
+        src={project.imageTechnologies} 
+        className="project-video"
+        autoPlay 
+        loop 
+        muted 
+        playsInline
+      />
+    ) : (
+      <img src={project.imageTechnologies} alt={`Technologies ${project.title}`} />
+    )}
+    <div className="section-text">
+      <h2>Technologies utilisées</h2>
+      <ul className="tech-list">
+        {project.technologies.map((tech, i) => (
+          <span key={i} className="tag">{tech}</span>
+        ))}
+      </ul>
+    </div>
+  </div>
+)}
+
 
       {/* 🎥 Galerie avec support vidéo */}
       {project.gallery && project.gallery.length > 0 && (
