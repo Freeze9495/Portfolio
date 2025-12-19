@@ -35,12 +35,12 @@ export const projectsData = [
     
     image: '/images/night.webp',
     imageHero: '/videos/pub_night.mp4',
-    imageDescription: '/images/nightprojet.png',
+    imageDescription: '/images/logonight.png',
     imageTechnologies: '/images/affichenight.png',
     
     gallery: [
-      '/images/night.webp',
-      '/images/nightprojet.png',
+      '/images/jaqnight.png',
+      '/images/resnight.png',
       '/images/affichenight.png'
     ],
     
