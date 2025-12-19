@@ -200,7 +200,7 @@ export const projectsData = [
     description: 'Site de sensibilisation contre l\'alcoolisme',
     fullDescription: `Projet de sensibilisation aux dangers de l'alcool. Site informatif avec témoignages, statistiques et ressources d'aide. Design sobre et impactant pour toucher le public cible.`,
     
-    image: '',
+    image: '/images/mockuplastdrop.png',
     imageHero: '/videos/pub_lastdrop.mp4',
     imageDescription: '/images/PlancheTendancelastdrop.png',
     imageTechnologies: '/videos/pub_lastdrop2.mp4',
