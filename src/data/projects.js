@@ -91,8 +91,8 @@ export const projectsData = [
     
     image: '/images/cotearmor.webp',
     imageHero: '/images/cotearmor.jpg',
-    imageDescription: '/images/siteequi.jpg',
-    imageTechnologies: '/images/cotearmor.jpg',
+    imageDescription: '/images/mockupcotearmor2.png',
+    imageTechnologies: '/images/mockupcotearmororange.png',
     
     gallery: [
       '/images/cotearmor.jpg',
