@@ -95,8 +95,8 @@ export const projectsData = [
     imageTechnologies: '/images/mockupcotearmororange.png',
     
     gallery: [
-      '/images/cotearmor.jpg',
-      '/images/siteequi.jpg'
+      '/images/cotearmoravis.png',
+      '/images/cotearmorlocation.png',
     ],
     
     technologies: ['Figma', 'UX Research', 'Wireframing', 'Prototypage'],
