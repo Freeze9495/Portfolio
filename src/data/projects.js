@@ -145,7 +145,7 @@ export const projectsData = [
     
     image: '/images/brochure.webp',
     imageHero: '/images/brochure2.webp',
-    imageDescription: '/images/exrecette.jpg',
+    imageDescription: '/images/indesignbrochure.png',
     imageTechnologies: '/images/brochure.jpg',
     
     gallery: [
@@ -170,7 +170,7 @@ export const projectsData = [
     description: 'Site web interactif et ludique',
     fullDescription: `Site web ludique inspiré de l'univers Kid Paddle, avec animations JavaScript interactives et design cartoon.`,
     
-    image: '/images/kidpadle.jpg',
+    image: '/images/kidpadle.png',
     imageHero: '/images/kidpadle.jpg',
     imageDescription: '/images/kidpadleaccueil.jpg',
     imageTechnologies: '/images/transmediakidpadle.jpg',
