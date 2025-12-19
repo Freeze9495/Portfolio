@@ -172,7 +172,7 @@ export const projectsData = [
     
     image: '/images/kidpadle.png',
     imageHero: '/images/kidpadle.jpg',
-    imageDescription: '/images/kidpadleaccueil.jpg',
+    imageDescription: '/images/transmediakidpadle.png',
     imageTechnologies: '/images/transmediakidpadle.jpg',
     
     gallery: [
