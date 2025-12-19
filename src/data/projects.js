@@ -202,7 +202,7 @@ export const projectsData = [
     
     image: '',
     imageHero: '/videos/pub_lastdrop.mp4',
-    imageDescription: '/images/lastdrop.png',
+    imageDescription: '/images/PlancheTendancelastdrop.png',
     imageTechnologies: '/images/lastdrop.png',
     
     gallery: [
