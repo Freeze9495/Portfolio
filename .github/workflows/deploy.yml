@@ -1,0 +1,39 @@
+name: Deploy React to IONOS
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Récupère le code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Installe Node.js (nécessaire pour construire React)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 3. Installe les dépendances
+      - name: Install Dependencies
+        run: npm install
+
+      # 4. Construit le site (crée le dossier 'dist')
+      - name: Build Project
+        run: npm run build
+
+      # 5. Envoie le dossier 'dist' chez IONOS
+      - name: Deploy to IONOS
+        uses: SamKirkland/FTP-Deploy-Action@4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: sftp
+          port: 22
+          local-dir: ./dist/
+          server-dir: /
