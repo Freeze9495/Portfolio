@@ -12,7 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2. Installe Node.js (nécessaire pour construire React)
+      # 2. Installe Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -26,14 +26,14 @@ jobs:
       - name: Build Project
         run: npm run build
 
-      # 5. Envoie le dossier 'dist' chez IONOS
-      - name: Deploy to IONOS
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      # 5. Envoie le dossier 'dist' chez IONOS via SFTP
+      - name: Deploy to IONOS (SFTP)
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps       # CORRECTION : sftp remplacé par ftps
-          port: 21             # CORRECTION : port 22 remplacé par 21
-          local-dir: ./dist/   # Assurez-vous que votre build crée bien un dossier 'dist' (et pas 'build')
-          server-dir: /        # Le dossier de destination sur le serveur
+          port: 22             # SFTP utilise le port 22
+          local_path: './dist/*' # Prend tout le contenu du dossier dist
+          remote_path: '/'       # Chemin sur le serveur (souvent '/' ou '/httpdocs/')
+          sftp_only: true
