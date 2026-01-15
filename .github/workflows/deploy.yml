@@ -8,25 +8,20 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      # 1. Récupère le code
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2. Installe Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # 3. Installe les dépendances
       - name: Install Dependencies
         run: npm install
 
-      # 4. Construit le site (crée le dossier 'dist')
       - name: Build Project
         run: npm run build
 
-      # 5. Envoie le dossier 'dist' chez IONOS via SFTP
       - name: Deploy to IONOS (SFTP)
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
@@ -35,6 +30,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: 22
           local_path: './dist/*'
-          remote_path: '/public_html/'  # ✅ Corrigé !
+          remote_path: 'public_html'  # ✅ Sans slashes
           sftp_only: true
           delete_remote_files: false
