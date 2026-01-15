@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-export const HeroTitle = ({ text = "Raphaël Piechocki TEST" }) => {
-
+export const HeroTitle = ({ text }) => {
   const titleRef = useRef(null);
 
   useEffect(() => {
