@@ -33,7 +33,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: 22             # SFTP utilise le port 22
-          local_path: './dist/*' # Prend tout le contenu du dossier dist
-          remote_path: '/'       # Chemin sur le serveur (souvent '/' ou '/httpdocs/')
+          port: 22
+          local_path: './dist/*'
+          remote_path: '/httpdocs/'  # ✅ Corrigé
           sftp_only: true
+          delete_remote_files: false  # ✅ Ajouté pour éviter de tout supprimer
