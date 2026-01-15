@@ -35,6 +35,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: 22
           local_path: './dist/*'
-          remote_path: '/httpdocs/'  # ✅ Corrigé
+          remote_path: '/public_html/'  # ✅ Corrigé !
           sftp_only: true
-          delete_remote_files: false  # ✅ Ajouté pour éviter de tout supprimer
+          delete_remote_files: false
