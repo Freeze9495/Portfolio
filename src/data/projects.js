@@ -221,31 +221,7 @@ export const projectsData = [
     year: 2024
   },
   
-  {
-    id: 'carte-interactive',
-    title: 'Carte Interactive',
-    category: 'Développement',
-    description: 'Carte interactive des Côtes d\'Armor',
-    fullDescription: `Carte interactive permettant de découvrir les points d'intérêt touristiques des Côtes d'Armor. Navigation intuitive avec filtres par catégories et fiches descriptives détaillées.`,
-    
-    image: '/images/carte.png',
-    imageHero: '/images/carte.png',
-    imageDescription: '/images/carte.png',
-    imageTechnologies: '/images/carte.png',
-    
-    gallery: [
-      '/images/carte.png'
-    ],
-    
-    technologies: ['JavaScript', 'Leaflet.js', 'API', 'HTML5', 'CSS3'],
-    tags: ['JavaScript', 'Carte', 'Interactive', 'API'],
-    featured: true,
-    
-    projectLink: null,
-    projectLinkText: null,
-    
-    year: 2024
-  },
+
   
   {
     id: 'motus',
@@ -273,7 +249,7 @@ export const projectsData = [
     year: 2024
   },
   {
-  id: 'sae303-climat',
+  id: 'carte-climat',
   title: 'Carte Interactive du Changement Climatique',
   category: 'Développement',
   description: 'Visualisation interactive des opinions sur le climat en France avec D3.js',
