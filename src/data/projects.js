@@ -257,10 +257,10 @@ export const projectsData = [
 
 Exploitation des données du baromètre des représentations sociales du changement climatique (data.gouv.fr). Visualisation des corrélations entre départements, tranches d'âge, habitat et modes de transport via camemberts, histogrammes et graphiques radar interactifs.`,
   
-  image: 'image1.jpg',
+  image: '',
   imageHero: 'image1.jpg',
-  imageDescription: 'image2.jpg',
-  imageTechnologies: 'image3.jpg',
+  imageDescription: 'carte.png',
+  imageTechnologies: 'carte2.png',
   
   gallery: [
     'image1.jpg',
