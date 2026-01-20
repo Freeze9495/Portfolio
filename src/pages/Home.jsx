@@ -4,7 +4,7 @@ import { RotatingBaseline } from '../components/RotatingBaseline';
 import { ScrollFloatText } from '../components/ScrollFloatText';
 import { ProjectCard } from '../components/ProjectCard';
 import { ToolsMarquee } from '../components/ToolsMarquee';
-import { projectsData } from '../data/projects'; // ✅ Retiré toolsData
+import { projectsData } from '../data/projects'; 
 import { useState } from 'react';
 
 export const Home = () => {
@@ -101,7 +101,7 @@ export const Home = () => {
         </div>
       </section>
 
-      <ToolsMarquee /> {/* ✅ Retiré tools={toolsData} */}
+      <ToolsMarquee /> {}
 
       <section id="contact" className="contact-section section">
         <h2 className="section-title">Contactez-moi</h2>

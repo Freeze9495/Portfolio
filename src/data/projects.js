@@ -213,7 +213,7 @@ export const projectsData = [
     
     technologies: ['HTML5', 'CSS3', 'JavaScript'],
     tags: ['Web', 'Sensibilisation', 'Responsive'],
-    featured: true,
+    featured: false,
     
     projectLink: null,
     projectLinkText: null,
@@ -257,22 +257,22 @@ export const projectsData = [
 
 Exploitation des données du baromètre des représentations sociales du changement climatique (data.gouv.fr). Visualisation des corrélations entre départements, tranches d'âge, habitat et modes de transport via camemberts, histogrammes et graphiques radar interactifs.`,
   
-  image: 'mockupcarte.png',
-  imageHero: 'image1.jpg',
-  imageDescription: 'carte.png',
-  imageTechnologies: 'carte2.png',
+  image: 'images/mockupcarte.png',
+  imageHero: 'images/image1.jpg',
+  imageDescription: 'images/carte.png',
+  imageTechnologies: 'images/carte2.png',
   
   gallery: [
-    'image1.jpg',
-    'image2.jpg',
-    'image3.jpg',
-    'image4.jpg'
+    'images/image1.jpg',
+    'images/image2.jpg',
+    'images/image3.jpg',
+    'images/image4.jpg'
   ],
   
   technologies: ['D3.js', 'JavaScript', 'SVG', 'HTML5', 'CSS3'],
   tags: ['D3.js', 'DataViz', 'Interactive', 'SVG'],
   
-  featured: true,
+  featured: false,
   
   projectLink: 'http://81.194.40.26/~piechocki/SAE303/',
   projectLinkText: 'Voir la carte interactive',
