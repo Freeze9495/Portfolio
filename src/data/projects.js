@@ -265,8 +265,8 @@ Exploitation des données du baromètre des représentations sociales du changem
   gallery: [
     '/images/icons/figma.png',
     '/images/figmacarte.png',
-    '/images/image3.jpg',
-    '/images/image4.jpg'
+    '/images/icons/d3js.png',
+    '/images/csvcarte.png'
   ],
   
   technologies: ['D3.js', 'JavaScript', 'SVG', 'HTML5', 'CSS3'],
