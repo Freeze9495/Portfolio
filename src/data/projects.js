@@ -263,8 +263,8 @@ Exploitation des données du baromètre des représentations sociales du changem
   imageTechnologies: '/images/carte2.png',
   
   gallery: [
-    '/images/image1.jpg',
-    '/images/image2.jpg',
+    '/images/icons/figma.png',
+    '/images/figmacarte.png',
     '/images/image3.jpg',
     '/images/image4.jpg'
   ],
