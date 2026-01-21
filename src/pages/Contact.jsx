@@ -1,11 +1,13 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
+    from_name: '',
+    user_email: '',
     message: ''
   });
+  const [status, setStatus] = useState('');
 
   const handleChange = (e) => {
     setFormData({
@@ -16,48 +18,87 @@ export const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Message envoyé ! (En développement)');
-    setFormData({ name: '', email: '', message: '' });
+    setStatus('sending');
+
+    emailjs.send(
+      'service_36kjm1s',           // ✅ Ton Service ID
+      'template_so0fmm4',          // ✅ Ton Template ID
+      formData,
+      'AnPrrZz3e2_TR703Z'          // ✅ Ta Public Key
+    )
+    .then(() => {
+      setStatus('success');
+      setFormData({ from_name: '', user_email: '', message: '' });
+      setTimeout(() => setStatus(''), 5000);
+    })
+    .catch(() => {
+      setStatus('error');
+      setTimeout(() => setStatus(''), 5000);
+    });
   };
 
   return (
-    <div className="contact-page">
-      <h1>Contactez-moi</h1>
-      <p className="contact-intro">
-        Une question ? Un projet ? N'hésitez pas à me contacter !
-      </p>
+    <section className="contact-section">
+      <div className="container">
+        <h1 className="section-title">Contact</h1>
+        <p className="section-subtitle">N'hésitez pas à me contacter pour discuter de vos projets</p>
+        
+        <form onSubmit={handleSubmit} className="contact-form">
+          <div className="form-group">
+            <label htmlFor="from_name">Nom</label>
+            <input
+              type="text"
+              id="from_name"
+              name="from_name"
+              value={formData.from_name}
+              onChange={handleChange}
+              required
+              placeholder="Votre nom"
+            />
+          </div>
 
-      <div className="contact-card">
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Votre nom"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Votre email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-          <textarea
-            name="message"
-            placeholder="Votre message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          />
-          <button type="submit" className="btn">
-            Envoyer
+          <div className="form-group">
+            <label htmlFor="user_email">Email</label>
+            <input
+              type="email"
+              id="user_email"
+              name="user_email"
+              value={formData.user_email}
+              onChange={handleChange}
+              required
+              placeholder="votre.email@exemple.com"
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+              rows="6"
+              placeholder="Votre message..."
+            />
+          </div>
+
+          <button 
+            type="submit" 
+            className="submit-btn"
+            disabled={status === 'sending'}
+          >
+            {status === 'sending' ? 'Envoi en cours...' : 'Envoyer'}
           </button>
+
+          {status === 'success' && (
+            <p className="success-message">✅ Message envoyé avec succès !</p>
+          )}
+          {status === 'error' && (
+            <p className="error-message">❌ Erreur lors de l'envoi. Réessayez.</p>
+          )}
         </form>
       </div>
-    </div>
+    </section>
   );
 };
