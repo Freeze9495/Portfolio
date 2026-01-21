@@ -128,7 +128,7 @@ export const projectsData = [
     
     technologies: ['Adobe Illustrator', 'Typographie'],
     tags: ['Typography', 'Design', 'Illustrator'],
-    featured: true,
+    featured: false,
     
     projectLink: 'https://www.figma.com/proto/clV1h4a1jijiozKABsfsLL/Site-Info-police?node-id=116-15&t=SXMX2a8HRvp1Nt8Q-1&scaling=scale-down&content-scaling=fixed&page-id=116%3A14',
     projectLinkText: 'Voir le prototype Figma',
@@ -230,18 +230,18 @@ export const projectsData = [
     description: 'Jeu de mots inspiré du célèbre Motus',
     fullDescription: `Recréation du jeu télévisé Motus en version web. Le joueur doit deviner un mot en plusieurs tentatives avec un système de couleurs indiquant les bonnes lettres. Interface ludique et addictive.`,
     
-    image: '/images/motus.png',
+    image: '/images/mockupmotus.png',
     imageHero: '/images/motus.png',
-    imageDescription: '/images/motus.png',
-    imageTechnologies: '/images/motus.png',
+    imageDescription: '/images/motusdemo.png',
+    imageTechnologies: '/images/motusdevine.png',
     
     gallery: [
-      '/images/motus.png'
+      '/images/motusadmin.png'
     ],
     
     technologies: ['JavaScript', 'HTML5', 'CSS3', 'Game Logic'],
     tags: ['JavaScript', 'Jeu', 'Interactive'],
-    featured: false,
+    featured: true,
     
     projectLink: null,
     projectLinkText: null,
