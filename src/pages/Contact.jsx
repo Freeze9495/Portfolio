@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
-    from_name: '',     // ✅ Garde from_name
+    from_name: '',
     user_email: '',
     message: ''
   });
@@ -21,19 +21,26 @@ export const Contact = () => {
     e.preventDefault();
     setStatus('sending');
 
+    // 🔍 DEBUG : Affiche les données envoyées
+    console.log('📧 Données envoyées à EmailJS:', formData);
+    console.log('Service ID:', 'service_36kjm1s');
+    console.log('Template ID:', 'template_so0fmm4');
+
     emailjs.send(
       'service_36kjm1s',
       'template_so0fmm4',
       formData,
       'AnPrrZz3e2_TR703Z'
     )
-      .then(() => {
+      .then((response) => {
+        console.log('✅ Succès EmailJS:', response);
         setStatus('success');
         setFormData({ from_name: '', user_email: '', message: '' });
         setTimeout(() => setStatus(''), 5000);
       })
       .catch((error) => {
-        console.error('Erreur EmailJS:', error);
+        console.error('❌ Erreur EmailJS:', error);
+        console.error('Détails:', error.text);
         setStatus('error');
         setTimeout(() => setStatus(''), 5000);
       });
@@ -53,7 +60,7 @@ export const Contact = () => {
             <input
               type="text"
               id="from_name"
-              name="from_name"         // ✅ from_name
+              name="from_name"
               value={formData.from_name}
               onChange={handleChange}
               placeholder="Votre nom"
