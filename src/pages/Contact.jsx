@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',           // ✅ Changé de "from_name" à "name"
+    from_name: '',     // ✅ Garde from_name
     user_email: '',
     message: ''
   });
@@ -29,7 +29,7 @@ export const Contact = () => {
     )
       .then(() => {
         setStatus('success');
-        setFormData({ name: '', user_email: '', message: '' }); // ✅ Changé ici aussi
+        setFormData({ from_name: '', user_email: '', message: '' });
         setTimeout(() => setStatus(''), 5000);
       })
       .catch((error) => {
@@ -49,12 +49,12 @@ export const Contact = () => {
 
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="name">Nom</label>
+            <label htmlFor="from_name">Nom</label>
             <input
               type="text"
-              id="name"
-              name="name"              // ✅ Changé de "from_name" à "name"
-              value={formData.name}    // ✅ Changé ici aussi
+              id="from_name"
+              name="from_name"         // ✅ from_name
+              value={formData.from_name}
               onChange={handleChange}
               placeholder="Votre nom"
               required
