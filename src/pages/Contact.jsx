@@ -21,17 +21,18 @@ export const Contact = () => {
     setStatus('sending');
 
     emailjs.send(
-      'service_36kjm1s',           // ✅ Ton Service ID
-      'template_so0fmm4',          // ✅ Ton Template ID
+      'service_36kjm1s',
+      'template_so0fmm4',
       formData,
-      'AnPrrZz3e2_TR703Z'          // ✅ Ta Public Key
-    )
+      'AnPrrZz3e2_TR703Z'
+    )  // ✅ Parenthèse fermante ajoutée ici !
     .then(() => {
       setStatus('success');
       setFormData({ from_name: '', user_email: '', message: '' });
       setTimeout(() => setStatus(''), 5000);
     })
-    .catch(() => {
+    .catch((error) => {
+      console.error('Erreur EmailJS:', error);
       setStatus('error');
       setTimeout(() => setStatus(''), 5000);
     });
