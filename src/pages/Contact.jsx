@@ -3,10 +3,11 @@ import emailjs from '@emailjs/browser';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
-    from_name: '',
+    name: '',           // ✅ Changé de "from_name" à "name"
     user_email: '',
     message: ''
   });
+
   const [status, setStatus] = useState('');
 
   const handleChange = (e) => {
@@ -25,36 +26,38 @@ export const Contact = () => {
       'template_so0fmm4',
       formData,
       'AnPrrZz3e2_TR703Z'
-    )  // ✅ Parenthèse fermante ajoutée ici !
-    .then(() => {
-      setStatus('success');
-      setFormData({ from_name: '', user_email: '', message: '' });
-      setTimeout(() => setStatus(''), 5000);
-    })
-    .catch((error) => {
-      console.error('Erreur EmailJS:', error);
-      setStatus('error');
-      setTimeout(() => setStatus(''), 5000);
-    });
+    )
+      .then(() => {
+        setStatus('success');
+        setFormData({ name: '', user_email: '', message: '' }); // ✅ Changé ici aussi
+        setTimeout(() => setStatus(''), 5000);
+      })
+      .catch((error) => {
+        console.error('Erreur EmailJS:', error);
+        setStatus('error');
+        setTimeout(() => setStatus(''), 5000);
+      });
   };
 
   return (
     <section className="contact-section">
-      <div className="container">
-        <h1 className="section-title">Contact</h1>
-        <p className="section-subtitle">N'hésitez pas à me contacter pour discuter de vos projets</p>
-        
-        <form onSubmit={handleSubmit} className="contact-form">
+      <div className="contact-container">
+        <h1 className="contact-title">Contactez-moi</h1>
+        <p className="contact-subtitle">
+          Une question ? Un projet ? N'hésitez pas à me contacter !
+        </p>
+
+        <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="from_name">Nom</label>
+            <label htmlFor="name">Nom</label>
             <input
               type="text"
-              id="from_name"
-              name="from_name"
-              value={formData.from_name}
+              id="name"
+              name="name"              // ✅ Changé de "from_name" à "name"
+              value={formData.name}    // ✅ Changé ici aussi
               onChange={handleChange}
-              required
               placeholder="Votre nom"
+              required
             />
           </div>
 
@@ -66,8 +69,8 @@ export const Contact = () => {
               name="user_email"
               value={formData.user_email}
               onChange={handleChange}
-              required
               placeholder="votre.email@exemple.com"
+              required
             />
           </div>
 
@@ -78,25 +81,26 @@ export const Contact = () => {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              required
-              rows="6"
               placeholder="Votre message..."
+              rows="6"
+              required
             />
           </div>
 
-          <button 
-            type="submit" 
-            className="submit-btn"
-            disabled={status === 'sending'}
-          >
+          <button type="submit" className="submit-btn" disabled={status === 'sending'}>
             {status === 'sending' ? 'Envoi en cours...' : 'Envoyer'}
           </button>
 
           {status === 'success' && (
-            <p className="success-message">✅ Message envoyé avec succès !</p>
+            <div className="success-message">
+              ✅ Message envoyé avec succès !
+            </div>
           )}
+
           {status === 'error' && (
-            <p className="error-message">❌ Erreur lors de l'envoi. Réessayez.</p>
+            <div className="error-message">
+              ❌ Erreur lors de l'envoi. Réessayez.
+            </div>
           )}
         </form>
       </div>
