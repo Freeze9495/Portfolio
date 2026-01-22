@@ -19,9 +19,11 @@ export const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    alert('🔥 FONCTION APPELÉE ! Le formulaire a été soumis.');
+    
     setStatus('sending');
 
-    // 🔍 DEBUG : Affiche les données envoyées
     console.log('📧 Données envoyées à EmailJS:', formData);
     console.log('Service ID:', 'service_36kjm1s');
     console.log('Template ID:', 'template_so0fmm4');
@@ -100,13 +102,13 @@ export const Contact = () => {
 
           {status === 'success' && (
             <div className="success-message">
-               Message envoyé avec succès !
+              ✅ Message envoyé avec succès !
             </div>
           )}
 
           {status === 'error' && (
             <div className="error-message">
-               Erreur lors de l'envoi. Réessayez.
+              ❌ Erreur lors de l'envoi. Réessayez.
             </div>
           )}
         </form>
