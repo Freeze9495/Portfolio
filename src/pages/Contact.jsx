@@ -100,13 +100,13 @@ export const Contact = () => {
 
           {status === 'success' && (
             <div className="success-message">
-              ✅ Message envoyé avec succès !
+               Message envoyé avec succès !
             </div>
           )}
 
           {status === 'error' && (
             <div className="error-message">
-              ❌ Erreur lors de l'envoi. Réessayez.
+               Erreur lors de l'envoi. Réessayez.
             </div>
           )}
         </form>
