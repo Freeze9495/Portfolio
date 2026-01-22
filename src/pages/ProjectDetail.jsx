@@ -2,47 +2,41 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { projectsData } from '../data/projects';
 import { useEffect } from 'react';
 
-
 export const ProjectDetail = () => {
   const { id } = useParams();
   const project = projectsData.find(p => p.id === id);
-
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-
   if (!project) {
     return <Navigate to="/projets" />;
   }
 
-
-  // 🎯 Fonction pour détecter si c'est une vidéo
+  // Fonction pour détecter si c'est une vidéo
   const isVideo = (url) => {
     if (!url) return false;
     const videoExtensions = ['.mp4', '.webm', '.ogg', '.mov'];
     return videoExtensions.some(ext => url.toLowerCase().endsWith(ext));
   };
 
-
-  // 🎯 Composant pour afficher image ou vidéo
-  const MediaElement = ({ src, alt, className = '' }) => {
+  // Composant pour afficher image ou vidéo
+  const MediaElement = ({ src, alt, className }) => {
     if (isVideo(src)) {
       return (
         <video 
           src={src} 
-          autoPlay 
           loop 
           muted 
-          playsInline
+          playsInline 
+          controls  // ⬅️ AJOUTÉ : Boutons de contrôle
           className={`project-video ${className}`}
         />
       );
     }
     return <img src={src} alt={alt} className={className} />;
   };
-
 
   return (
     <div className="project-detail">
@@ -51,15 +45,13 @@ export const ProjectDetail = () => {
         ← Retour aux projets
       </Link>
 
-
       {/* Header */}
       <div className="project-detail-header">
         <h1>{project.title}</h1>
         <span className="tag">{project.category}</span>
       </div>
 
-
-      {/* 🎥 Hero avec support vidéo */}
+      {/* Hero avec support vidéo */}
       <div className="project-hero-image">
         <MediaElement 
           src={project.imageHero || project.image} 
@@ -67,14 +59,12 @@ export const ProjectDetail = () => {
         />
       </div>
 
-
       {/* Section 1 - Description */}
       <section className="project-two-cols">
         <div className="section-text">
           <h2>Description du projet</h2>
           <p>{project.fullDescription || project.description}</p>
         </div>
-        
         {(project.imageDescription || project.videoDescription) && (
           <MediaElement 
             src={project.videoDescription || project.imageDescription || project.image} 
@@ -83,13 +73,12 @@ export const ProjectDetail = () => {
         )}
       </section>
 
-
-      {/* Section 2 - Technologies ✅ CORRIGÉ */}
+      {/* Section 2 - Technologies CORRIGÉ */}
       {project.imageTechnologies && (
         <div className="project-two-cols reverse">
           <MediaElement 
             src={project.imageTechnologies} 
-            alt={`Technologies ${project.title}`}
+            alt={`Technologies - ${project.title}`}
           />
           <div className="section-text">
             <h2>Technologies utilisées</h2>
@@ -102,8 +91,7 @@ export const ProjectDetail = () => {
         </div>
       )}
 
-
-      {/* 🎥 Galerie avec support vidéo */}
+      {/* Galerie avec support vidéo */}
       {project.gallery && project.gallery.length > 0 && (
         <section className="project-gallery-section">
           <h2>Galerie du projet</h2>
@@ -111,7 +99,7 @@ export const ProjectDetail = () => {
             {project.gallery.map((media, index) => (
               <MediaElement 
                 key={index}
-                src={media} 
+                src={media}
                 alt={`${project.title} - ${index + 1}`}
               />
             ))}
@@ -119,13 +107,11 @@ export const ProjectDetail = () => {
         </section>
       )}
 
-
       {/* Boutons d'action */}
       <div className="project-actions">
         <Link to="/projets" className="btn btn-outline">
           Tous les projets
         </Link>
-        
         {project.projectLink && (
           <a 
             href={project.projectLink} 
@@ -133,7 +119,7 @@ export const ProjectDetail = () => {
             rel="noopener noreferrer" 
             className="btn"
           >
-            {project.projectLinkText || 'Voir le projet'} →
+            {project.projectLinkText || 'Voir le projet'}
           </a>
         )}
       </div>
