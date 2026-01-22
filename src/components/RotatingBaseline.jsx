@@ -8,32 +8,36 @@ export const RotatingBaseline = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [fadeState, setFadeState] = useState('visible'); // 'visible' ou 'hidden'
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsAnimating(true);
+      // 1. Fade out
+      setFadeState('hidden');
       
-      // Attend que le fade-out soit terminé avant de changer le texte
+      // 2. Change le texte APRÈS fade out complet
       setTimeout(() => {
         setCurrentIndex((prev) => (prev + 1) % baselines.length);
-        setIsAnimating(false);
-      }, 500); // Durée du fade-out
+        
+        // 3. Fade in après un micro-délai
+        setTimeout(() => {
+          setFadeState('visible');
+        }, 50);
+      }, 600); // Attend la fin complète du fade-out
       
-    }, 4000); // Change toutes les 4 secondes
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <p 
-      className="hero-baseline"
-      style={{
-        opacity: isAnimating ? 0 : 1,
-        transition: 'opacity 0.5s ease-in-out'
-      }}
-    >
-      {baselines[currentIndex]}
-    </p>
+    <div className="hero-baseline-container">
+      <p 
+        key={currentIndex} // Force React à recréer l'élément
+        className={`hero-baseline ${fadeState}`}
+      >
+        {baselines[currentIndex]}
+      </p>
+    </div>
   );
 };
