@@ -173,14 +173,55 @@ body {
 }
 
 
+/* Container avec hauteur fixe pour éviter les sauts */
+.hero-baseline-container {
+  min-height: 3rem; /* Augmenté pour mobile */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  position: relative;
+  width: 100%;
+  padding: 0 1rem; /* Padding pour mobile */
+}
+
 .hero-baseline {
-  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-size: clamp(1rem, 2.5vw, 1.6rem); /* Réduit le min pour mobile */
   color: #bbb;
   font-weight: 400;
   text-align: center;
-  min-height: 2rem; /* pour éviter les sauts de layout */
-  margin-bottom: 2rem;
+  margin: 0;
+  width: 100%;
+  max-width: 90%; /* Empêche le débordement */
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+  line-height: 1.4; /* Meilleur espacement */
 }
+
+/* États d'animation */
+.hero-baseline.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-baseline.hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* Mobile : on enlève position absolute pour éviter les problèmes */
+@media (max-width: 768px) {
+  .hero-baseline-container {
+    min-height: 4rem; /* Plus de hauteur sur mobile */
+    padding: 0 2rem;
+  }
+  
+  .hero-baseline {
+    font-size: 1rem;
+    max-width: 100%;
+    position: static !important; /* Force le positionnement normal */
+  }
+}
+
 
 
 .hero-cta {
