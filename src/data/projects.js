@@ -209,6 +209,7 @@ export const projectsData = [
       '/images/Affichelastdrop.png',
       '/images/Affichelastdrop2.png',
       '/images/Affichelastdrop3.png',
+      '/images/declilastdrop.png',
     ],
     
     technologies: ['HTML5', 'CSS3', 'JavaScript'],
