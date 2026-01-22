@@ -87,7 +87,7 @@ export const Home = () => {
         {/* Remplacé le formulaire par un bouton vers /contact */}
         <div style={{ textAlign: 'center', marginTop: '2rem' }}>
           <Link to="/contact" className="btn" style={{ fontSize: '1.1rem', padding: '1rem 2.5rem' }}>
-            📧 Accéder au formulaire de contact
+             Accéder au formulaire de contact
           </Link>
         </div>
       </section>

@@ -33,7 +33,7 @@ export const Contact = () => {
       'template_so0fmm4',
       formData,
       'AnPrrZz3e2_TR703Z'
-    )
+    ) // ⬅️ PARENTHÈSE AJOUTÉE ICI !
       .then((response) => {
         console.log('✅ Succès EmailJS:', response);
         setStatus('success');
