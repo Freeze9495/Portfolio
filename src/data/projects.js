@@ -117,12 +117,12 @@ export const projectsData = [
     fullDescription: `Exploration typographique autour de la création d'une police de caractères originale, mêlant modernité et références classiques.`,
     
     image: '/images/sitepolice_mockup.webp',
-    imageHero: '/images/plancheinflupolice.png',
-    imageDescription: '/images//wireframepolice.png',
+    imageHero: '/videos/video_police.mp4',
+    imageDescription: '/images/wireframepolice.png',
     imageTechnologies: '/images/maquettepolice.png',
     
     gallery: [
-      '/images/sitepolice_mockup.jpg',
+      '/images/plancheinflupolice.png',
       '/images/plancheinflupolice.jpg'
     ],
     
