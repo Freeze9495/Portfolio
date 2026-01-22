@@ -1,4 +1,39 @@
 export const projectsData = [
+
+  {
+  id: 'carte-climat',
+  title: 'Carte Interactive du Changement Climatique',
+  category: 'Développement',
+  description: 'Visualisation interactive des opinions sur le climat en France avec D3.js',
+  fullDescription: `Projet universitaire SAÉ 303 de visualisation de données. Application web interactive explorant les opinions des Français sur le changement climatique à travers une carte de France dynamique avec graphiques D3.js.
+
+Exploitation des données du baromètre des représentations sociales du changement climatique (data.gouv.fr). Visualisation des corrélations entre départements, tranches d'âge, habitat et modes de transport via camemberts, histogrammes et graphiques radar interactifs.`,
+  
+  image: '/images/mockupcarte.png',
+  imageHero: '/images/image1.jpg',
+  imageDescription: '/images/carte.png',
+  imageTechnologies: '/images/carte2.png',
+  
+  gallery: [
+    '/images/icons/figma.png',
+    '/images/figmacarte.png',
+    '/images/icons/d3js.png',
+    '/images/csvcarte.png'
+  ],
+  
+  technologies: ['D3.js', 'JavaScript', 'SVG', 'HTML5', 'CSS3'],
+  tags: ['D3.js', 'DataViz', 'Interactive', 'SVG'],
+  
+  featured: true,
+  
+  projectLink: 'http://81.194.40.26/~piechocki/SAE303/',
+  projectLinkText: 'Voir la carte interactive',
+  
+  year: 2026
+},
+
+
+
   {
     id: 'equilibio',
     title: 'Equilibio',
@@ -46,7 +81,7 @@ export const projectsData = [
     
     technologies: ['HTML5', 'CSS3', 'InDesign','Photoshop'],
     tags: ['HTML', 'CSS', 'StratComm', 'Design'],
-    featured: true,
+    featured: false,
     
     projectLink: 'https://www.figma.com/proto/PmQdmMujoDtLmFU3lIJWRz/Night-of-Terrror?node-id=0-9&t=4SCKV3aIP2Bnjm2v-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=0%3A9',
     projectLinkText: 'Voir le prototype Figma',
@@ -168,7 +203,7 @@ export const projectsData = [
     title: 'Kid Paddle',
     category: 'Développement',
     description: 'Site web interactif et ludique',
-    fullDescription: `Site web ludique inspiré de l'univers Kid Paddle, avec animations JavaScript interactives et design cartoon.`,
+    fullDescription: `Site web ludique inspiré de l'univers Kid Paddle, avec animations gif faites avec photoshop, interactives et design cartoon.`,
     
     image: '/images/kidpadle.png',
     imageHero: '/images/kidpadle.jpg',
@@ -181,8 +216,8 @@ export const projectsData = [
       '/images/transmediakidpadle.jpg'
     ],
     
-    technologies: ['JavaScript', 'Animations', 'HTML5', 'CSS3'],
-    tags: ['JavaScript', 'Animations', 'Interactive'],
+    technologies: ['CMS', 'Animations', 'UX', 'UI'],
+    tags: ['CMS', 'Animations', 'Interactive'],
     featured: true,
     
     projectLink: 'https://bdkidpaddle-infos.jimdofree.com',
@@ -249,37 +284,6 @@ export const projectsData = [
     
     year: 2024
   },
-  {
-  id: 'carte-climat',
-  title: 'Carte Interactive du Changement Climatique',
-  category: 'Développement',
-  description: 'Visualisation interactive des opinions sur le climat en France avec D3.js',
-  fullDescription: `Projet universitaire SAÉ 303 de visualisation de données. Application web interactive explorant les opinions des Français sur le changement climatique à travers une carte de France dynamique avec graphiques D3.js.
-
-Exploitation des données du baromètre des représentations sociales du changement climatique (data.gouv.fr). Visualisation des corrélations entre départements, tranches d'âge, habitat et modes de transport via camemberts, histogrammes et graphiques radar interactifs.`,
-  
-  image: '/images/mockupcarte.png',
-  imageHero: '/images/image1.jpg',
-  imageDescription: '/images/carte.png',
-  imageTechnologies: '/images/carte2.png',
-  
-  gallery: [
-    '/images/icons/figma.png',
-    '/images/figmacarte.png',
-    '/images/icons/d3js.png',
-    '/images/csvcarte.png'
-  ],
-  
-  technologies: ['D3.js', 'JavaScript', 'SVG', 'HTML5', 'CSS3'],
-  tags: ['D3.js', 'DataViz', 'Interactive', 'SVG'],
-  
-  featured: false,
-  
-  projectLink: 'http://81.194.40.26/~piechocki/SAE303/',
-  projectLinkText: 'Voir la carte interactive',
-  
-  year: 2026
-},
 
 
   
