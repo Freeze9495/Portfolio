@@ -155,13 +155,13 @@ export const Home = () => {
 
           {status === 'success' && (
             <div style={{ color: '#4CAF50', marginTop: '1rem', textAlign: 'center' }}>
-              ✅ Message envoyé avec succès !
+               Message envoyé avec succès !
             </div>
           )}
 
           {status === 'error' && (
             <div style={{ color: '#f44336', marginTop: '1rem', textAlign: 'center' }}>
-              ❌ Erreur lors de l'envoi. Réessayez.
+               Erreur lors de l'envoi. Réessayez.
             </div>
           )}
         </form>
