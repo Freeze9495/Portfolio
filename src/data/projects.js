@@ -112,7 +112,7 @@ export const projectsData = [
   {
     id: 'police',
     title: 'Police Typography',
-    category: 'Design',
+    category: 'UX/UI',
     description: 'Étude typographique créative et expérimentale',
     fullDescription: `Exploration typographique autour de la création d'une police de caractères originale, mêlant modernité et références classiques.`,
     
