@@ -4,6 +4,7 @@ import { RotatingBaseline } from '../components/RotatingBaseline';
 import { ScrollFloatText } from '../components/ScrollFloatText';
 import { ProjectCard } from '../components/ProjectCard';
 import { ToolsMarquee } from '../components/ToolsMarquee';
+import { ScrollToTop } from '../components/ScrollToTop';
 import { projectsData } from '../data/projects'; 
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
@@ -144,7 +145,7 @@ export const Home = () => {
             margin: 0 
           }}>
             💼 Je suis actuellement <strong style={{ color: 'var(--doré)' }}>en recherche d'un stage de 2 mois</strong> en développement web, 
-            entre <strong style={{ color: 'var(--doré)' }}>avril et juin 2026</strong>. 
+            idéalement entre <strong style={{ color: 'var(--doré)' }}>avril et juin 2026</strong>. 
             N'hésitez pas à me contacter pour toute opportunité !
           </p>
         </div>
@@ -190,6 +191,9 @@ export const Home = () => {
           )}
         </form>
       </section>
+
+      {/* Bouton retour en haut */}
+      <ScrollToTop />
     </div>
   );
 };
