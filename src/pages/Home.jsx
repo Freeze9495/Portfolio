@@ -8,6 +8,7 @@ import { projectsData } from '../data/projects';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
+
 export const Home = () => {
   const featuredProjects = projectsData.filter(p => p.featured);
   
@@ -125,6 +126,29 @@ export const Home = () => {
           Une question ? Un projet ? N'hésitez pas à me contacter !
         </p>
         
+        {/* Encadré explicatif recherche de stage */}
+        <div style={{ 
+          maxWidth: '700px', 
+          margin: '0 auto 2rem', 
+          textAlign: 'center',
+          padding: '1.2rem 1.5rem',
+          background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(212, 175, 55, 0.03))',
+          border: '1px solid rgba(212, 175, 55, 0.3)',
+          borderRadius: '12px',
+          backdropFilter: 'blur(10px)'
+        }}>
+          <p style={{ 
+            color: 'rgba(255, 255, 255, 0.9)', 
+            fontSize: '1rem',
+            lineHeight: '1.6',
+            margin: 0 
+          }}>
+            💼 Je suis actuellement <strong style={{ color: 'var(--doré)' }}>en recherche d'un stage de 2 mois</strong> en développement web, 
+            idéalement entre <strong style={{ color: 'var(--doré)' }}>avril et juin 2026</strong>. 
+            N'hésitez pas à me contacter pour toute opportunité !
+          </p>
+        </div>
+        
         <form className="contact-form" onSubmit={handleSubmit}>
           <input
             type="text"
@@ -155,13 +179,13 @@ export const Home = () => {
 
           {status === 'success' && (
             <div style={{ color: '#4CAF50', marginTop: '1rem', textAlign: 'center' }}>
-               Message envoyé avec succès !
+              ✅ Message envoyé avec succès !
             </div>
           )}
 
           {status === 'error' && (
             <div style={{ color: '#f44336', marginTop: '1rem', textAlign: 'center' }}>
-               Erreur lors de l'envoi. Réessayez.
+              ❌ Erreur lors de l'envoi. Réessayez.
             </div>
           )}
         </form>
