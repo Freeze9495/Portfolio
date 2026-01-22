@@ -117,9 +117,9 @@ export const projectsData = [
     fullDescription: `Exploration typographique autour de la création d'une police de caractères originale, mêlant modernité et références classiques.`,
     
     image: '/images/sitepolice_mockup.webp',
-    imageHero: '/images/sitepolice_mockup.png',
-    imageDescription: '/images/plancheinflupolice.png',
-    imageTechnologies: '/images/sitepolice_mockup.png',
+    imageHero: '/images/plancheinflupolice.png',
+    imageDescription: '/images//wireframepolice.png',
+    imageTechnologies: '/images/maquettepolice.png',
     
     gallery: [
       '/images/sitepolice_mockup.jpg',
@@ -155,7 +155,7 @@ export const projectsData = [
     
     technologies: ['Adobe InDesign', 'Branding', 'Print Design'],
     tags: ['Print', 'InDesign', 'Branding'],
-    featured: true,
+    featured: false,
     
     projectLink: '/images/brochure.pdf',
     projectLinkText: 'Télécharger la brochure PDF',
@@ -183,7 +183,7 @@ export const projectsData = [
     
     technologies: ['JavaScript', 'Animations', 'HTML5', 'CSS3'],
     tags: ['JavaScript', 'Animations', 'Interactive'],
-    featured: false,
+    featured: true,
     
     projectLink: 'https://bdkidpaddle-infos.jimdofree.com',
     projectLinkText: 'Voir le site web',
