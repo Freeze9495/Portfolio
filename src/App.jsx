@@ -5,13 +5,13 @@ import { Home } from './pages/Home';
 import { Projects } from './pages/Projects';
 import { ProjectDetail } from './pages/ProjectDetail';
 import { LegalNotice } from './pages/LegalNotice';
-import { DarkVeilCanvas } from './components/DarkVeilCanvas';
+import DarkVeilBackground from './components/DarkVeilBackground';
 import './styles/global.css';
 
 function App() {
   return (
     <Router>
-      <DarkVeilCanvas />
+      <DarkVeilBackground />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
