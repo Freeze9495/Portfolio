@@ -20,4 +20,11 @@ export default defineConfig({
       },
     }),
   ],
+  // ✅ NOUVEAU : Configuration du build
+  publicDir: 'public', // Copie automatiquement tout le contenu de public/ vers dist/
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true, // Nettoie dist/ avant chaque build
+    copyPublicDir: true // Copie le .htaccess automatiquement
+  }
 });
