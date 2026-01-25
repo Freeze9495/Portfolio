@@ -76,13 +76,13 @@ export const Home = () => {
         <div className="about-content">
           <div className="about-text">
             <p className="about-paragraph">
-              Je m'appelle <strong>Raphaël Piechocki</strong> et je me forme au <strong>développement web</strong> et au <strong>design UX/UI</strong> au sein du BUT Métiers du Multimédia et de l'Internet. 
+              Je m'appelle <strong>Raphaël Piechocki</strong> et je me forme au <strong>développement web</strong> et au <strong>design UX/UI</strong> au sein du BUT Métiers du Multimédia et de l'Internet à Bobigny. 
             </p>
             <p className="about-paragraph">
-              J'aime créer des sites qui allient esthétique et fonctionnalité, où chaque détail compte. J'accorde beaucoup d'importance à la <strong>qualité du code</strong> et à une <strong>expérience utilisateur fluide</strong>, pour rendre un site performant, agréable à utiliser et facile à faire évoluer.
+              J'aime créer des sites web qui allient esthétique et fonctionnalité, où chaque détail compte. J'accorde beaucoup d'importance à la <strong>qualité du code</strong> et à une <strong>expérience utilisateur fluide</strong>, pour rendre un site web performant, agréable à utiliser et facile à faire évoluer.
             </p>
             <p className="about-paragraph">
-              Ce qui me motive le plus, c'est de <strong>transformer des idées en réalités digitales</strong> qui servent vraiment aux utilisateurs et donnent vie aux projets.
+              Ce qui me motive le plus, c'est de <strong>transformer des idées en réalités </strong> qui servent vraiment aux utilisateurs et donnent vie aux projets.
             </p>
           </div>
 
