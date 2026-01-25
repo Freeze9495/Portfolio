@@ -1,10 +1,12 @@
 import { useRef, useEffect } from 'react';
 import { Renderer, Program, Mesh, Triangle, Vec2 } from 'ogl';
 
+
 const vertex = `
 attribute vec2 position;
 void main(){gl_Position=vec4(position,0.0,1.0);}
 `;
+
 
 const fragment = `
 #ifdef GL_ES
@@ -19,10 +21,13 @@ uniform float uWarp;
 #define iTime uTime
 #define iResolution uResolution
 
+
 vec4 buf[8];
 float rand(vec2 c){return fract(sin(dot(c,vec2(12.9898,78.233)))*43758.5453);}
 
+
 vec4 sigmoid(vec4 x){return 1./(1.+exp(-x));}
+
 
 vec4 cppn_fn(vec2 coordinate,float in0,float in1,float in2){
     buf[6]=vec4(coordinate.x,coordinate.y,0.3948333106474662+in0,0.36+in1);
@@ -44,12 +49,14 @@ vec4 cppn_fn(vec2 coordinate,float in0,float in1,float in2){
     return vec4(buf[0].x,buf[0].y,buf[0].z,1.);
 }
 
+
 void mainImage(out vec4 fragColor,in vec2 fragCoord){
     vec2 uv=fragCoord/uResolution.xy*2.-1.;
     uv.y*=-1.;
     uv+=uWarp*vec2(sin(uv.y*6.283+uTime*0.5),cos(uv.x*6.283+uTime*0.5))*0.05;
     fragColor=cppn_fn(uv,0.1*sin(0.3*uTime),0.1*sin(0.69*uTime),0.1*sin(0.44*uTime));
 }
+
 
 void main(){
     vec4 col;mainImage(col,gl_FragCoord.xy);
@@ -65,6 +72,7 @@ void main(){
 }
 `;
 
+
 export default function DarkVeilBackground() {
   const ref = useRef(null);
   
@@ -72,9 +80,13 @@ export default function DarkVeilBackground() {
     const canvas = ref.current;
     if (!canvas) return;
 
+    // ✅ OPTIMISATIONS PERFORMANCES
     const renderer = new Renderer({
-      dpr: Math.min(window.devicePixelRatio, 2),
-      canvas
+      dpr: Math.min(window.devicePixelRatio, 1.5), // ← Limite à 1.5 au lieu de 2
+      canvas,
+      alpha: false, // ← Désactive la transparence (gain de perf)
+      antialias: false, // ← Désactive l'antialiasing (gain de perf)
+      powerPreference: 'low-power' // ← Mode économie d'énergie
     });
 
     const gl = renderer.gl;
