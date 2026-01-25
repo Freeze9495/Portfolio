@@ -90,7 +90,7 @@ export const Home = () => {
 
           <div className="about-right">
             <div className="about-photo">
-              <img src="/images/raph.png" alt="Raphaël Piechocki" />
+              <img src="/images/raph.png" alt="Raphaël Piechocki" loading="lazy" />
             </div>
 
             <div className="stage-badge">

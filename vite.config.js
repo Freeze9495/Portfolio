@@ -20,11 +20,32 @@ export default defineConfig({
       },
     }),
   ],
-  // ✅ NOUVEAU : Configuration du build
-  publicDir: 'public', // Copie automatiquement tout le contenu de public/ vers dist/
+  // ✅ Configuration du build optimisée
+  publicDir: 'public',
   build: {
     outDir: 'dist',
-    emptyOutDir: true, // Nettoie dist/ avant chaque build
-    copyPublicDir: true // Copie le .htaccess automatiquement
+    emptyOutDir: true,
+    copyPublicDir: true,
+    // Optimisations de performance
+    minify: 'terser', // Minification agressive
+    terserOptions: {
+      compress: {
+        drop_console: true, // Retire les console.log en prod
+        drop_debugger: true
+      }
+    },
+    rollupOptions: {
+      output: {
+        // Code splitting pour charger seulement ce qui est nécessaire
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'emailjs': ['@emailjs/browser']
+        }
+      }
+    },
+    // Compression et optimisation
+    cssCodeSplit: true, // Split CSS par route
+    chunkSizeWarningLimit: 1000,
+    reportCompressedSize: true
   }
 });

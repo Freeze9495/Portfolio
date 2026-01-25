@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export const ProjectCard = ({ id, title, description, image, tags }) => {
   return (
     <Link to={`/projet/${id}`} className="project-card">
-      <img src={image} alt={title} className="project-image" />
+      <img src={image} alt={title} className="project-image" loading="lazy" />
       <div className="project-overlay">
         <h3>{title}</h3>
         <p>{description}</p>

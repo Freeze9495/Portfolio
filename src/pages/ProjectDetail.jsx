@@ -52,7 +52,7 @@ export const ProjectDetail = () => {
         />
       );
     }
-    return <img src={src} alt={alt} className={className} />;
+    return <img src={src} alt={alt} className={className} loading="lazy" />;
   };
 
   return (
