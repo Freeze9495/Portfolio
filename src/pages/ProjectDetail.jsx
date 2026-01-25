@@ -2,6 +2,7 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { projectsData } from '../data/projects';
 import { useEffect, useState } from 'react';
 import { ImageLightbox } from '../components/ImageLightbox';
+import { SEO } from '../components/SEO';
 
 
 export const ProjectDetail = () => {
@@ -56,6 +57,12 @@ export const ProjectDetail = () => {
 
   return (
     <div className="project-detail">
+      <SEO
+        title={`${project.title} - Raphaël Piechocki | Portfolio`}
+        description={project.fullDescription || project.description}
+        keywords={`${project.technologies.join(', ')}, ${project.tags.join(', ')}, portfolio, Raphaël Piechocki`}
+        image={project.image}
+      />
       {/* Back button */}
       <Link to="/projets" className="btn-back">
         ← Retour aux projets

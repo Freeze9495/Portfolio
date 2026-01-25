@@ -5,31 +5,30 @@ import { ScrollFloatText } from '../components/ScrollFloatText';
 import { ProjectCard } from '../components/ProjectCard';
 import { ToolsMarquee } from '../components/ToolsMarquee';
 import { ScrollToTop } from '../components/ScrollToTop';
-import { projectsData } from '../data/projects'; 
+import { projectsData } from '../data/projects';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { SEO } from '../components/SEO';
 
 
 export const Home = () => {
   const featuredProjects = projectsData.filter(p => p.featured);
-  
+
   const [formData, setFormData] = useState({
     from_name: '',
     user_email: '',
     message: ''
   });
-  
+
   const [status, setStatus] = useState('');
-  
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setStatus('sending');
-
-    console.log('📧 Envoi EmailJS...', formData);
 
     emailjs.send(
       'service_36kjm1s',
@@ -37,29 +36,32 @@ export const Home = () => {
       formData,
       'AnPrrZz3e2_TR703Z'
     )
-      .then((response) => {
-        console.log('✅ Succès !', response);
+      .then(() => {
         setStatus('success');
         setFormData({ from_name: '', user_email: '', message: '' });
         setTimeout(() => setStatus(''), 5000);
       })
-      .catch((error) => {
-        console.error('❌ Erreur:', error);
+      .catch(() => {
         setStatus('error');
         setTimeout(() => setStatus(''), 5000);
       });
   };
-  
+
   return (
     <div>
+      <SEO
+        title="Raphaël Piechocki - Portfolio | Développeur Web & UX/UI Designer"
+        description="Portfolio de Raphaël Piechocki, étudiant en développement web et design UX/UI au BUT MMI - Bobigny. Découvrez mes projets React, JavaScript, Figma. En recherche de stage avril-juin 2026."
+        keywords="développement web, UX/UI, portfolio, Raphaël Piechocki, stage développeur, BUT MMI, React, JavaScript, Figma, design, étudiant développeur"
+      />
       <section id="accueil" className="hero">
         <HeroTitle text="Raphaël Piechocki" />
         <RotatingBaseline />
         <div className="hero-cta">
           <div className="hero-cta">
-            <a 
-              href="/cvraph.pdf" 
-              target="_blank" 
+            <a
+              href="/cvraph.pdf"
+              target="_blank"
               rel="noopener noreferrer"
               className="btn"
             >
@@ -76,7 +78,7 @@ export const Home = () => {
         <div className="about-content">
           <div className="about-text">
             <p className="about-paragraph">
-              Je m'appelle <strong>Raphaël Piechocki</strong> et je me forme au <strong>développement web</strong> et au <strong>design UX/UI</strong> au sein du BUT Métiers du Multimédia et de l'Internet à Bobigny. 
+              Je m'appelle <strong>Raphaël Piechocki</strong> et je me forme au <strong>développement web</strong> et au <strong>design UX/UI</strong> au sein du BUT Métiers du Multimédia et de l'Internet à Bobigny.
             </p>
             <p className="about-paragraph">
               J'aime créer des sites web qui allient esthétique et fonctionnalité, où chaque détail compte. J'accorde beaucoup d'importance à la <strong>qualité du code</strong> et à une <strong>expérience utilisateur fluide</strong>, pour rendre un site web performant, agréable à utiliser et facile à faire évoluer.
@@ -90,7 +92,7 @@ export const Home = () => {
             <div className="about-photo">
               <img src="/images/raph.png" alt="Raphaël Piechocki" />
             </div>
-            
+
             <div className="stage-badge">
               <span className="stage-icon">🔍</span>
               <div className="stage-text">
@@ -126,11 +128,11 @@ export const Home = () => {
         <p className="section-subtitle">
           Une question ? Un projet ? N'hésitez pas à me contacter !
         </p>
-        
+
         {/* Encadré explicatif recherche de stage */}
-        <div style={{ 
-          maxWidth: '700px', 
-          margin: '0 auto 2rem', 
+        <div style={{
+          maxWidth: '700px',
+          margin: '0 auto 2rem',
           textAlign: 'center',
           padding: '1.2rem 1.5rem',
           background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(212, 175, 55, 0.03))',
@@ -138,18 +140,18 @@ export const Home = () => {
           borderRadius: '12px',
           backdropFilter: 'blur(10px)'
         }}>
-          <p style={{ 
-            color: 'rgba(255, 255, 255, 0.9)', 
+          <p style={{
+            color: 'rgba(255, 255, 255, 0.9)',
             fontSize: '1rem',
             lineHeight: '1.6',
-            margin: 0 
+            margin: 0
           }}>
-            💼 Je suis actuellement <strong style={{ color: 'var(--doré)' }}>en recherche d'un stage de 2 mois</strong> en développement web, 
-            idéalement entre <strong style={{ color: 'var(--doré)' }}>avril et juin 2026</strong>. 
+            💼 Je suis actuellement <strong style={{ color: 'var(--doré)' }}>en recherche d'un stage de 2 mois</strong> en développement web,
+            idéalement entre <strong style={{ color: 'var(--doré)' }}>avril et juin 2026</strong>.
             N'hésitez pas à me contacter pour toute opportunité !
           </p>
         </div>
-        
+
         <form className="contact-form" onSubmit={handleSubmit}>
           <input
             type="text"

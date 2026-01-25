@@ -5,22 +5,27 @@ import { Home } from './pages/Home';
 import { Projects } from './pages/Projects';
 import { ProjectDetail } from './pages/ProjectDetail';
 import { LegalNotice } from './pages/LegalNotice';
+import { NotFound } from './pages/NotFound';
 import DarkVeilBackground from './components/DarkVeilBackground';
+import { HelmetProvider } from 'react-helmet-async';
 import './styles/global.css';
 
 function App() {
   return (
-    <Router>
-      <DarkVeilBackground />
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projets" element={<Projects />} />
-        <Route path="/projet/:id" element={<ProjectDetail />} />
-        <Route path="/mentions-legales" element={<LegalNotice />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <DarkVeilBackground />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projets" element={<Projects />} />
+          <Route path="/projet/:id" element={<ProjectDetail />} />
+          <Route path="/mentions-legales" element={<LegalNotice />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </HelmetProvider>
   );
 }
 
