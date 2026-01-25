@@ -143,7 +143,32 @@ Exploitation des données du baromètre des représentations sociales du changem
     
     year: 2023
   },
-  
+   {
+    id: 'motus',
+    title: 'Motus',
+    category: 'Développement',
+    description: 'Jeu de mots inspiré du célèbre Motus',
+    fullDescription: `Recréation du jeu télévisé Motus en version web. Le joueur doit deviner un mot en plusieurs tentatives avec un système de couleurs indiquant les bonnes lettres. Interface ludique et addictive.`,
+    
+    image: '/images/mockupmotus.png',
+    imageHero: '/images/motus.png',
+    imageDescription: '/images/motusdemo.png',
+    imageTechnologies: '/images/motusdevine.png',
+    
+    gallery: [
+      '/images/motusadmin.png'
+    ],
+    
+    technologies: ['JavaScript', 'HTML5', 'CSS3', 'Game Logic'],
+    tags: ['JavaScript', 'Jeu', 'Interactive'],
+    featured: true,
+    
+    projectLink: null,
+    projectLinkText: null,
+    
+    year: 2024
+  },
+
   {
     id: 'police',
     title: 'Police Typography',
@@ -259,32 +284,7 @@ Exploitation des données du baromètre des représentations sociales du changem
   
 
   
-  {
-    id: 'motus',
-    title: 'Motus',
-    category: 'Développement',
-    description: 'Jeu de mots inspiré du célèbre Motus',
-    fullDescription: `Recréation du jeu télévisé Motus en version web. Le joueur doit deviner un mot en plusieurs tentatives avec un système de couleurs indiquant les bonnes lettres. Interface ludique et addictive.`,
-    
-    image: '/images/mockupmotus.png',
-    imageHero: '/images/motus.png',
-    imageDescription: '/images/motusdemo.png',
-    imageTechnologies: '/images/motusdevine.png',
-    
-    gallery: [
-      '/images/motusadmin.png'
-    ],
-    
-    technologies: ['JavaScript', 'HTML5', 'CSS3', 'Game Logic'],
-    tags: ['JavaScript', 'Jeu', 'Interactive'],
-    featured: true,
-    
-    projectLink: null,
-    projectLinkText: null,
-    
-    year: 2024
-  },
-
+ 
 
   
 
