@@ -20,7 +20,7 @@ export const LegalNotice = () => {
           <strong>Nom :</strong> Raphaël Piechocki<br />
           <strong>Statut :</strong> Étudiant<br />
           <strong>Ville :</strong> Ermont, France<br />
-          <strong>Email :</strong> contact@raphael-piechocki.fr<br />
+          <strong>Email :</strong> raphael.piechockipro@gmail.com<br />
           <strong>Directeur de publication :</strong> Raphaël Piechocki
         </p>
       </section>
