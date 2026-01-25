@@ -19,12 +19,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
 
-      # 3. Installe les dépendances
+      # 3. Nettoie le cache npm (évite les problèmes de dépendances)
+      - name: Clean npm cache
+        run: npm cache clean --force
+
+      # 4. Installe les dépendances
       - name: Install Dependencies
-        run: npm install
+        run: npm ci --legacy-peer-deps
 
-      # 4. Construit le site (crée le dossier 'dist')
+      # 5. Construit le site (crée le dossier 'dist')
       - name: Build Project
         run: npm run build
 
