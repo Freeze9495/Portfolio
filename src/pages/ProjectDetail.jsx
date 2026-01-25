@@ -137,8 +137,13 @@ export const ProjectDetail = () => {
               <div
                 key={index}
                 className="gallery-item"
-                onClick={() => openLightbox(project.gallery, index)}
-                style={{ cursor: 'pointer' }}
+                onClick={() => {
+                  // Ouvrir lightbox SEULEMENT pour les images, pas les vidéos
+                  if (!isVideo(media)) {
+                    openLightbox(project.gallery, index);
+                  }
+                }}
+                style={{ cursor: isVideo(media) ? 'default' : 'pointer' }}
               >
                 <MediaElement
                   src={media}
