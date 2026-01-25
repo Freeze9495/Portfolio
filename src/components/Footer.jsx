@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export const Footer = () => {
   return (
     <footer className="footer">
@@ -17,7 +19,8 @@ export const Footer = () => {
         >
           GitHub
         </a>
-        <a href="mailto:raphael.piechocki@example.com">Email</a>
+        <a href="mailto:contact@raphael-piechocki.fr">Email</a>
+        <Link to="/mentions-legales">Mentions légales</Link>
       </div>
     </footer>
   );
