@@ -8,7 +8,6 @@ import { ScrollToTop } from '../components/ScrollToTop';
 import { projectsData } from '../data/projects';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { SEO } from '../components/SEO';
 
 
 export const Home = () => {
@@ -49,11 +48,6 @@ export const Home = () => {
 
   return (
     <div>
-      <SEO
-        title="Raphaël Piechocki - Portfolio | Développeur Web & UX/UI Designer"
-        description="Portfolio de Raphaël Piechocki, étudiant en développement web et design UX/UI au BUT MMI - Bobigny. Découvrez mes projets React, JavaScript, Figma. En recherche de stage avril-juin 2026."
-        keywords="développement web, UX/UI, portfolio, Raphaël Piechocki, stage développeur, BUT MMI, React, JavaScript, Figma, design, étudiant développeur"
-      />
       <section id="accueil" className="hero">
         <HeroTitle text="Raphaël Piechocki" />
         <RotatingBaseline />
