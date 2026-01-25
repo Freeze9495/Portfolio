@@ -1,24 +1,9 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 export default defineConfig({
   plugins: [
-    react(),
-    ViteImageOptimizer({
-      png: {
-        quality: 80,
-      },
-      jpeg: {
-        quality: 80,
-      },
-      jpg: {
-        quality: 80,
-      },
-      webp: {
-        quality: 80,
-      },
-    }),
+    react()
   ],
   // ✅ Configuration du build optimisée
   publicDir: 'public',
@@ -26,14 +11,8 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: true,
     copyPublicDir: true,
-    // Optimisations de performance
-    minify: 'terser', // Minification agressive
-    terserOptions: {
-      compress: {
-        drop_console: true, // Retire les console.log en prod
-        drop_debugger: true
-      }
-    },
+    // Minification par défaut (esbuild, plus rapide et stable que terser)
+    minify: 'esbuild',
     rollupOptions: {
       output: {
         // Code splitting pour charger seulement ce qui est nécessaire
