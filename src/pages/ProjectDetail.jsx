@@ -1,14 +1,22 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { projectsData } from '../data/projects';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { ImageLightbox } from '../components/ImageLightbox';
+
 
 export const ProjectDetail = () => {
   const { id } = useParams();
   const project = projectsData.find(p => p.id === id);
 
+  // États pour la lightbox
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxImages, setLightboxImages] = useState([]);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
 
   if (!project) {
     return <Navigate to="/projets" />;
@@ -21,15 +29,23 @@ export const ProjectDetail = () => {
     return videoExtensions.some(ext => url.toLowerCase().endsWith(ext));
   };
 
+  // Fonction pour ouvrir la lightbox
+  const openLightbox = (images, index) => {
+    setLightboxImages(images);
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
+
   // Composant pour afficher image ou vidéo
   const MediaElement = ({ src, alt, className }) => {
     if (isVideo(src)) {
       return (
-        <video 
-          src={src} 
-          loop 
-          muted 
-          playsInline 
+        <video
+          src={src}
+          loop
+          muted
+          playsInline
           controls  // ⬅️ AJOUTÉ : Boutons de contrôle
           className={`project-video ${className}`}
         />
@@ -53,8 +69,8 @@ export const ProjectDetail = () => {
 
       {/* Hero avec support vidéo */}
       <div className="project-hero-image">
-        <MediaElement 
-          src={project.imageHero || project.image} 
+        <MediaElement
+          src={project.imageHero || project.image}
           alt={project.title}
         />
       </div>
@@ -66,20 +82,41 @@ export const ProjectDetail = () => {
           <p>{project.fullDescription || project.description}</p>
         </div>
         {(project.imageDescription || project.videoDescription) && (
-          <MediaElement 
-            src={project.videoDescription || project.imageDescription || project.image} 
-            alt={`${project.title} - Description`}
-          />
+          <div
+            className="clickable-media"
+            onClick={() => {
+              const mediaSrc = project.videoDescription || project.imageDescription || project.image;
+              if (!isVideo(mediaSrc)) {
+                openLightbox([mediaSrc], 0);
+              }
+            }}
+            style={{ cursor: isVideo(project.videoDescription || project.imageDescription) ? 'default' : 'pointer' }}
+          >
+            <MediaElement
+              src={project.videoDescription || project.imageDescription || project.image}
+              alt={`${project.title} - Description`}
+            />
+          </div>
         )}
       </section>
 
       {/* Section 2 - Technologies CORRIGÉ */}
       {project.imageTechnologies && (
         <div className="project-two-cols reverse">
-          <MediaElement 
-            src={project.imageTechnologies} 
-            alt={`Technologies - ${project.title}`}
-          />
+          <div
+            className="clickable-media"
+            onClick={() => {
+              if (!isVideo(project.imageTechnologies)) {
+                openLightbox([project.imageTechnologies], 0);
+              }
+            }}
+            style={{ cursor: isVideo(project.imageTechnologies) ? 'default' : 'pointer' }}
+          >
+            <MediaElement
+              src={project.imageTechnologies}
+              alt={`Technologies - ${project.title}`}
+            />
+          </div>
           <div className="section-text">
             <h2>Technologies utilisées</h2>
             <ul className="tech-list">
@@ -97,11 +134,17 @@ export const ProjectDetail = () => {
           <h2>Galerie du projet</h2>
           <div className="project-gallery">
             {project.gallery.map((media, index) => (
-              <MediaElement 
+              <div
                 key={index}
-                src={media}
-                alt={`${project.title} - ${index + 1}`}
-              />
+                className="gallery-item"
+                onClick={() => openLightbox(project.gallery, index)}
+                style={{ cursor: 'pointer' }}
+              >
+                <MediaElement
+                  src={media}
+                  alt={`${project.title} - ${index + 1}`}
+                />
+              </div>
             ))}
           </div>
         </section>
@@ -113,16 +156,25 @@ export const ProjectDetail = () => {
           Tous les projets
         </Link>
         {project.projectLink && (
-          <a 
-            href={project.projectLink} 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <a
+            href={project.projectLink}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn"
           >
             {project.projectLinkText || 'Voir le projet'}
           </a>
         )}
       </div>
+
+      {/* Lightbox pour l'agrandissement des images */}
+      {lightboxOpen && (
+        <ImageLightbox
+          images={lightboxImages}
+          initialIndex={lightboxIndex}
+          onClose={() => setLightboxOpen(false)}
+        />
+      )}
     </div>
   );
 };
