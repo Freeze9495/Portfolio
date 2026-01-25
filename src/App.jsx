@@ -5,6 +5,7 @@ import { Home } from './pages/Home';
 import { Projects } from './pages/Projects';
 import { ProjectDetail } from './pages/ProjectDetail';
 import { LegalNotice } from './pages/LegalNotice';
+import DarkVeilBackground from './components/DarkVeilBackground';
 import './styles/global.css';
 
 function App() {
