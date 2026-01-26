@@ -1,4 +1,21 @@
 # ========================================
+# REACT ROUTER - Redirections SPA
+# ========================================
+
+# Active le module de réécriture
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # Si le fichier ou répertoire existe, ne pas rediriger
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  
+  # Rediriger toutes les autres requêtes vers index.html
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# ========================================
 # CACHE ET PERFORMANCES - Portfolio
 # ========================================
 
@@ -51,6 +68,32 @@
   AddOutputFilterByType DEFLATE application/x-javascript
   AddOutputFilterByType DEFLATE application/json
   AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ========================================
+# COMPRESSION BROTLI (meilleure que Gzip)
+# ========================================
+
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css
+  AddOutputFilterByType BROTLI_COMPRESS text/javascript application/javascript application/x-javascript
+  AddOutputFilterByType BROTLI_COMPRESS application/json application/xml image/svg+xml
+</IfModule>
+
+# ========================================
+# OPTIMISATION VIDÉOS ET MÉDIAS
+# ========================================
+
+<IfModule mod_headers.c>
+  # Cache des vidéos (6 mois)
+  <FilesMatch "\.(mp4|webm|ogg|mov)$">
+    Header set Cache-Control "max-age=15552000, public"
+  </FilesMatch>
+  
+  # Cache des PDFs (3 mois)
+  <FilesMatch "\.(pdf)$">
+    Header set Cache-Control "max-age=7776000, public"
+  </FilesMatch>
 </IfModule>
 
 # ========================================
