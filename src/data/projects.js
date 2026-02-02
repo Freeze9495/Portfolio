@@ -19,7 +19,7 @@ export const projectsData = [
     technologies: ['Figma', 'Prototypage', 'Adobe Suite', 'User Research'],
     tags: ['UX/UI', 'Mobile App', 'Dashboard', 'Print'],
 
-    featured: true,
+    featured: false,
 
     projectLink: '',
     projectLinkText: 'Voir le prototype',
