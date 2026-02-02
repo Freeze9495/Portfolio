@@ -80,7 +80,7 @@ Exploitation des données du baromètre des représentations sociales du changem
 
     technologies: ['Figma', 'UX Design', 'UI Design', 'Prototypage'],
     tags: ['UX', 'UI', 'Figma', 'Mobile'],
-    featured: true,
+    featured: false,
 
     projectLink: 'https://www.figma.com/proto/mvLgCxV32uXGGf8OZaRbAR/Untitled?node-id=1-1036&starting-point-node-id=1%3A1036&t=aAJQnjYLpX62WHUZ-1',
     projectLinkText: 'Voir le prototype Figma',
