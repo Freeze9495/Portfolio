@@ -116,9 +116,11 @@
     Header set Cache-Control "max-age=31536000, public, immutable"
   </FilesMatch>
   
-  # Pas de cache pour le HTML
+  # Pas de cache pour le HTML (Revalidation systématique)
   <FilesMatch "\.(html|htm)$">
-    Header set Cache-Control "max-age=3600, public, must-revalidate"
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
   </FilesMatch>
 </IfModule>
 
