@@ -9,11 +9,11 @@ export const projectsData = [
     image: '/images/mockupzenith.png',
     imageHero: '/images/mockupzenith.png',
     imageDescription: '/images/zenith_screen.png',
-    imageTechnologies: '/images/zenith_screen.png',
+    imageTechnologies: '/images/zenith1.png',
 
     gallery: [
-      '/images/zenith_screen.png',
-      '/images/mockupzenith.png'
+      '/images/zenith2.png',
+      '/images/zenith3.png'
     ],
 
     technologies: ['React', 'CSS3', 'Vite', 'UX/UI'],
