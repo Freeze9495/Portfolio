@@ -1,5 +1,32 @@
 export const projectsData = [
   {
+    id: 'alumni-sorbonne',
+    title: 'Alumni Sorbonne Paris Nord',
+    category: 'UX/UI Design',
+    description: 'Conception complète de l\'application mobile et CRM pour le réseau Alumni',
+    fullDescription: `Projet complet de design UX/UI pour le réseau des anciens élèves de l'Université Sorbonne Paris Nord. La mission comprenait la conception des maquettes de l'application mobile pour les étudiants et anciens, ainsi que l'interface du CRM pour l'administration. J'ai également réalisé les supports de communication (affiches) pour le lancement.`,
+
+    image: '/images/mockupalumni.png',
+    imageHero: '/images/mockupalumni.png',
+    imageDescription: '/images/alumni_screen.png',
+    imageTechnologies: '/images/alumni_screen.png',
+
+    gallery: [
+      '/images/alumni_screen.png',
+      '/images/mockupalumni.png'
+    ],
+
+    technologies: ['Figma', 'Prototypage', 'Adobe Suite', 'User Research'],
+    tags: ['UX/UI', 'Mobile App', 'Dashboard', 'Print'],
+
+    featured: true,
+
+    projectLink: '',
+    projectLinkText: 'Voir le prototype',
+
+    year: 2025
+  },
+  {
     id: 'zenith',
     title: 'Zenith',
     category: 'Développement',
