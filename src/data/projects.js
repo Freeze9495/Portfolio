@@ -54,7 +54,7 @@ Exploitation des données du baromètre des représentations sociales du changem
 
     featured: true,
 
-    projectLink: 'http://81.194.40.26/~piechocki/SAE303/',
+    projectLink: 'https://raphael-piechocki.fr/SAE303/',
     projectLinkText: 'Voir la carte interactive',
 
     year: 2026
