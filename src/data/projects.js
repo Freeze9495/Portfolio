@@ -310,42 +310,6 @@ Exploitation des données du baromètre des représentations sociales du changem
     year: 2024
   },
 
-  {
-    id: 'alumni-sorbonne',
-    title: 'Alumni Sorbonne Paris Nord',
-    category: 'UX/UI Design',
-    description: 'Conception complète de l\'application mobile et CRM pour le réseau Alumni',
-    fullDescription: `Projet complet de design UX/UI pour le réseau des anciens élèves de l'Université Sorbonne Paris Nord. La mission comprenait la conception des maquettes de l'application mobile pour les étudiants et anciens, ainsi que l'interface du CRM pour l'administration. J'ai également réalisé les supports de communication (affiches) pour le lancement.`,
-
-    image: '/images/mockupalumni.png',
-    imageHero: '/images/mockupalumni.png',
-    imageDescription: '/images/crmalumni.png',
-    imageTechnologies: '/images/alumnimessage.png',
-
-    gallery: [
-      '/images/alumniadmin.png',
-      ''
-    ],
-
-    technologies: ['Figma', 'Prototypage', 'Adobe Suite', 'User Research'],
-    tags: ['UX/UI', 'Mobile App', 'Dashboard', 'Print'],
-
-    featured: false,
-
-    projectLink: '',
-    projectLinkText: 'Voir le prototype',
-
-    year: 2025
-  },
-
-
-
-
-
-
-
-
-
 ];
 
 export const toolsData = [
