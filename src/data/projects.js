@@ -20,7 +20,7 @@ export const projectsData = [
 
     featured: true,
 
-    projectLink: 'https://cinefav.vercel.app/',
+    projectLink: 'https://raphael-piechocki.fr/Cinefav/',
     projectLinkText: 'Voir le site',
 
     year: 2026
