@@ -163,7 +163,7 @@ Exploitation des données du baromètre des représentations sociales du changem
 
     technologies: ['HTML5', 'CSS3', 'Responsive Design'],
     tags: ['HTML', 'CSS', 'Responsive'],
-    featured: true,
+    featured: false,
 
     projectLink: 'http://81.194.40.26/~piechocki/SAE_203',
     projectLinkText: 'Voir le site web',
