@@ -1,4 +1,30 @@
 export const projectsData = [
+  {
+    id: 'cinefav',
+    title: 'CineFav',
+    category: 'IA & Développement',
+    description: 'Explorateur de films intelligent propulsé par l\'IA Gemini',
+    fullDescription: `CineFav est une application innovante qui combine la puissance de l'IA (Google Gemini) avec une base de données de films. L'utilisateur peut obtenir des résumés détaillés, des avis générés par l'IA, ou effectuer des recherches intelligentes basées sur son humeur ou ses préférences spécifiques. Une nouvelle façon de découvrir le cinéma.`,
+
+    image: '/images/cinefav_mockup.png',
+    imageHero: '/videos/cinefavvideo.mp4',
+    imageDescription: '/images/cinefav_mockup.png',
+    imageTechnologies: '/images/cinefav_mockup.png',
+
+    gallery: [
+      '/images/cinefav_mockup.png'
+    ],
+
+    technologies: ['React', 'Gemini API', 'Vite', 'TailwindCSS'],
+    tags: ['IA', 'API', 'Cinéma', 'React'],
+
+    featured: true,
+
+    projectLink: 'https://cinefav.vercel.app/',
+    projectLinkText: 'Voir le site',
+
+    year: 2026
+  },
 
   {
     id: 'zenith',
