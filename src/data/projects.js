@@ -7,15 +7,12 @@ export const projectsData = [
     fullDescription: `Projet de catalogue interactif pour les films du Studio Ghibli, intégrant une API pour afficher les informations détaillées des œuvres.`,
 
     image: '/images/mockupghibli.png',
-    imageHero: '/videos/pub_ghibli.mp4',
-    imageDescription: '/images/PlancheTendanceghibli.png',
-    imageTechnologies: '/videos/pub_ghibli2.mp4',
+    imageHero: '/images/accueilghibli.png',
+    imageDescription: '/images/detailghibli.png',
+    imageTechnologies: '/images/footerghibli.png',
 
     gallery: [
-      '/images/Affichelastdrop.png',
-      '/images/Affichelastdrop2.png',
-      '/images/Affichelastdrop3.png',
-      '/images/declilastdrop.png',
+      '/images/mockupghibli.png',
     ],
 
     technologies: ['HTML5', 'CSS3', 'JavaScript','Template','Fletch'],
