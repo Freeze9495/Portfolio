@@ -1,5 +1,33 @@
 export const projectsData = [
   {
+    id: 'ghibli',
+    title: 'Site Catalogue Film Ghibli',
+    category: 'Développement',
+    description: 'Site de Catalogue des films du Studio Ghibli avec API',
+    fullDescription: `Projet de catalogue interactif pour les films du Studio Ghibli, intégrant une API pour afficher les informations détaillées des œuvres.`,
+
+    image: '/images/mockupghibli.png',
+    imageHero: '/videos/pub_ghibli.mp4',
+    imageDescription: '/images/PlancheTendanceghibli.png',
+    imageTechnologies: '/videos/pub_ghibli2.mp4',
+
+    gallery: [
+      '/images/Affichelastdrop.png',
+      '/images/Affichelastdrop2.png',
+      '/images/Affichelastdrop3.png',
+      '/images/declilastdrop.png',
+    ],
+
+    technologies: ['HTML5', 'CSS3', 'JavaScript','Template','Fletch'],
+    tags: ['Web', 'API', 'Responsive'],
+    featured: true,
+
+    projectLink: 'https://raphael-piechocki.fr/ghibli/',
+    projectLinkText: 'Voir le site web',
+
+    year: 2024
+  },
+  {
     id: 'cinefav',
     title: 'CineFav',
     category: 'IA & Développement',
