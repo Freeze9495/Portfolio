@@ -19,8 +19,8 @@ export const projectsData = [
     tags: ['Web', 'Sensibilisation', 'Responsive'],
     featured: true,
 
-    projectLink: null,
-    projectLinkText: null,
+    projectLink: 'https://raphael-piechocki.fr/dev-simulator/',
+    projectLinkText: 'Jouer au Dev Simulator',
 
     year: 2024
   },
