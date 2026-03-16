@@ -20,7 +20,7 @@ export const projectsData = [
 
     technologies: ['HTML5', 'CSS3', 'JavaScript'],
     tags: ['Web', 'Sensibilisation', 'Responsive'],
-    featured: false,
+    featured: true,
 
     projectLink: null,
     projectLinkText: null,
@@ -71,7 +71,7 @@ export const projectsData = [
     technologies: ['React', 'Gemini API', 'Vite', 'TailwindCSS'],
     tags: ['IA', 'API', 'Cinéma', 'React'],
 
-    featured: true,
+    featured: false,
 
     projectLink: 'https://raphael-piechocki.fr/Cinefav/',
     projectLinkText: 'Voir le site',
