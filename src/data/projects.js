@@ -6,7 +6,7 @@ export const projectsData = [
     description: 'Jeu de clicker idle simulant la vie d\'un développeur web',
     fullDescription: `Projetez-vous dans la peau d'un développeur web avec "Dev Simulator", un jeu de clicker idle où vous commencez en tant que stagiaire et évoluez jusqu'à devenir un développeur senior. Gagnez des points de compétence en cliquant, débloquez de nouvelles technologies, gérez votre temps et votre énergie pour progresser dans votre carrière virtuelle. Un mélange addictif de stratégie et de progression pour les passionnés de développement.`,
 
-    image: '/images/mockupdev-simulator.png',
+    image: '/images/mockupdev-simulator.webp',
     imageHero: '/videos/pub_devsimulator.mp4',
     imageDescription: '/images/accueil_dev-simulator.png',
     imageTechnologies: '/videos/pub_devsimulator2.mp4',
