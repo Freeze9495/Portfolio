@@ -1,4 +1,32 @@
 export const projectsData = [
+   {
+    id: 'dev-simulator',
+    title: 'Dev Simulator',
+    category: 'Développement',
+    description: 'Jeu de clicker idle simulant la vie d\'un développeur web',
+    fullDescription: `Projetez-vous dans la peau d'un développeur web avec "Dev Simulator", un jeu de clicker idle où vous commencez en tant que stagiaire et évoluez jusqu'à devenir un développeur senior. Gagnez des points de compétence en cliquant, débloquez de nouvelles technologies, gérez votre temps et votre énergie pour progresser dans votre carrière virtuelle. Un mélange addictif de stratégie et de progression pour les passionnés de développement.`,
+
+    image: '/images/mockupdev-simulator.png',
+    imageHero: '/videos/pub_devsimulator.mp4',
+    imageDescription: '/images/accueil_dev-simulator.png',
+    imageTechnologies: '/videos/pub_devsimulator2.mp4',
+
+    gallery: [
+      '/images/Affichelastdrop.png',
+      '/images/Affichelastdrop2.png',
+      '/images/Affichelastdrop3.png',
+      '/images/declilastdrop.png',
+    ],
+
+    technologies: ['HTML5', 'CSS3', 'JavaScript'],
+    tags: ['Web', 'Sensibilisation', 'Responsive'],
+    featured: false,
+
+    projectLink: null,
+    projectLinkText: null,
+
+    year: 2024
+  },
   {
     id: 'ghibli',
     title: 'Site Catalogue Film Ghibli',
