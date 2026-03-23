@@ -265,7 +265,7 @@ Exploitation des données du baromètre des représentations sociales du changem
 
     technologies: ['JavaScript', 'HTML5', 'CSS3', 'Game Logic'],
     tags: ['JavaScript', 'Jeu', 'Interactive'],
-    featured: true,
+    featured: false,
 
     projectLink: null,
     projectLinkText: null,
