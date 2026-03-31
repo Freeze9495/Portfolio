@@ -63,7 +63,7 @@ export const Home = () => {
             </a>
           </div>
           <a href="#contact" className="btn btn-outline">
-            En recherche de stage
+            En recherche d'alternance
           </a>
         </div>
       </section>
@@ -90,8 +90,8 @@ export const Home = () => {
             <div className="stage-badge">
               <span className="stage-icon">🔍</span>
               <div className="stage-text">
-                <strong>En recherche de stage</strong>
-                <p>Développement web • Avril - Juin 2026</p>
+                <strong>En recherche d'Alternance</strong>
+                <p>Développement web • Septembre 2026</p>
               </div>
             </div>
           </div>
@@ -140,8 +140,8 @@ export const Home = () => {
             lineHeight: '1.6',
             margin: 0
           }}>
-            💼 Je suis actuellement <strong style={{ color: 'var(--doré)' }}>en recherche d'un stage de 2 mois</strong> en développement web,
-            idéalement entre <strong style={{ color: 'var(--doré)' }}>avril et juin 2026</strong>.
+            💼 Je suis actuellement <strong style={{ color: 'var(--doré)' }}>en recherche d'une alternance de 1 an</strong> en développement web,
+            idéalement à <strong style={{ color: 'var(--doré)' }}>la rentrée 2026</strong>.
             N'hésitez pas à me contacter pour toute opportunité !
           </p>
         </div>
