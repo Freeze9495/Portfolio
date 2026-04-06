@@ -2,28 +2,28 @@ import { useEffect, useRef } from 'react';
 
 export const useRevealAnimation = (threshold = 0.1) => {
   const ref = useRef(null);
-  
+
   useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
+    // Add reveal class for initial hidden state
+    element.classList.add('reveal');
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-          observer.unobserve(entry.target);
+          element.classList.add('visible');
+          observer.unobserve(element); // Only animate once
         }
       },
-      { threshold }
+      { threshold, rootMargin: '0px 0px -60px 0px' }
     );
-    
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-    
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
   }, [threshold]);
-  
+
   return ref;
 };

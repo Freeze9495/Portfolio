@@ -8,8 +8,9 @@ export const HeroTitle = ({ text }) => {
     letters.forEach((letter, index) => {
       setTimeout(() => {
         letter.style.opacity = '1';
-        letter.style.transform = 'translateY(0) rotateX(0)';
-      }, index * 50);
+        letter.style.transform = 'translateY(0)';
+        letter.style.filter = 'blur(0)';
+      }, index * 40 + 200);
     });
   }, []);
 
@@ -25,10 +26,10 @@ export const HeroTitle = ({ text }) => {
               className="letter"
               style={{
                 opacity: 0,
-                transform: 'translateY(20px) rotateX(-90deg)',
-                transition: 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                transform: 'translateY(12px)',
+                filter: 'blur(4px)',
+                transition: `all 0.5s cubic-bezier(0.22, 1, 0.36, 1)`,
                 display: 'inline-block',
-                transformOrigin: '50% 100%'
               }}
             >
               {char === ' ' ? '\u00A0' : char}

@@ -9,7 +9,7 @@ export const ProjectCard = ({ id, title, description, image, tags }) => {
         <p>{description}</p>
         {tags && (
           <div className="project-tags">
-            {tags.map((tag, index) => (
+            {tags.slice(0, 3).map((tag, index) => (
               <span key={index} className="tag">{tag}</span>
             ))}
           </div>

@@ -6,13 +6,15 @@ import { Projects } from './pages/Projects';
 import { ProjectDetail } from './pages/ProjectDetail';
 import { LegalNotice } from './pages/LegalNotice';
 import { NotFound } from './pages/NotFound';
-import DarkVeilBackground from './components/DarkVeilBackground';
 import './styles/global.css';
 
 function App() {
   return (
     <Router>
-      <DarkVeilBackground />
+      {/* Lightweight CSS background with dot grid + gradient */}
+      <div className="scene-bg" aria-hidden="true" />
+      <div className="noise-overlay" aria-hidden="true" />
+      
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

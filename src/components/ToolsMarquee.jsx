@@ -13,38 +13,41 @@ export const ToolsMarquee = () => {
   ];
 
   return (
-    <div className="tools-marquee-wrapper">
-      <h2 className="tools-marquee-title">Technologies & Outils</h2>
-      
-      <div className="tools-marquee-container">
-        {/* Premier groupe de logos */}
-        <div className="tools-marquee-group">
-          {logos.map((tool, index) => (
-            <div key={`logo-1-${index}`} className="tool-card">
-              <img 
-                src={tool.icon} 
-                alt={tool.name}
-                className="tool-icon"
-              />
-              <span className="tool-name">{tool.name}</span>
-            </div>
-          ))}
-        </div>
+    <section className="tools-section">
+      <h2 className="tools-section-title">Technologies & Outils</h2>
 
-        {/* Duplication pour l'effet infini */}
-        <div className="tools-marquee-group" aria-hidden="true">
-          {logos.map((tool, index) => (
-            <div key={`logo-2-${index}`} className="tool-card">
-              <img 
-                src={tool.icon} 
-                alt={tool.name}
-                className="tool-icon"
-              />
-              <span className="tool-name">{tool.name}</span>
-            </div>
-          ))}
+      <div className="tools-marquee-wrapper">
+        <div className="tools-marquee-container">
+          <div className="tools-marquee-group">
+            {logos.map((tool, index) => (
+              <div key={`logo-1-${index}`} className="tool-card">
+                <img
+                  src={tool.icon}
+                  alt={tool.name}
+                  className="tool-icon"
+                  loading="lazy"
+                />
+                <span className="tool-name">{tool.name}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Duplication for infinite scroll */}
+          <div className="tools-marquee-group" aria-hidden="true">
+            {logos.map((tool, index) => (
+              <div key={`logo-2-${index}`} className="tool-card">
+                <img
+                  src={tool.icon}
+                  alt={tool.name}
+                  className="tool-icon"
+                  loading="lazy"
+                />
+                <span className="tool-name">{tool.name}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
