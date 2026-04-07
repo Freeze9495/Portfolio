@@ -1,16 +1,34 @@
-# React + Vite
+# 🚀 Mon Portfolio - Raphaël Piechocki
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenue sur le code source de mon portfolio ! Ce site présente mes projets, mes compétences et mon parcours en tant que développeur web. 
 
-Currently, two official plugins are available:
+🔗 **[Visiter le site en ligne : raphael-piechocki.fr](https://raphael-piechocki.fr)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🛠️ Stack Technique
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Ce projet est une Single Page Application (SPA) développée pour être rapide et modulaire. 
 
-## Expanding the ESLint configuration
+* **Framework Front-end :** React.js
+* **Outil de build :** Vite (HMR & compilation rapide)
+* **Styling :** CSS natif / Modules
+* **Déploiement :** CI/CD automatisé via Vercel
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Fonctionnalités clés
+
+* **Galerie de projets :** Présentation de mes travaux (Fullstack MVC, Data Visualisation avec D3.js, Projets Unity/Unreal Engine).
+* **Parcours détaillé :** Mise en avant de mon cursus BUT MMI et de mes "soft skills" (BAFA).
+* **Design Responsive :** Expérience utilisateur fluide et adaptée à tous les supports (Mobile, Tablette, Desktop).
+
+---
+
+## 🚀 Installation en local
+
+Si vous souhaitez explorer le code et lancer le projet sur votre machine locale :
+
+1. **Cloner le dépôt :**
+   ```bash
+   git clone [https://github.com/Freeze9495/TON_NOM_DE_REPO.git](https://github.com/Freeze9495/TON_NOM_DE_REPO.git)
